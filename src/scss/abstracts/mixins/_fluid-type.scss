@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+
+// -----------------------------------------------------------------------------
+// Fluid type mixin
+// Used in typography mixins
+//
+// Options:
+// • $properties(value = css property) - property to apply value to
+// • $min-vw(value = width) - min screen width to stop fluid calc
+// • $max-vw(value = width) - max screen width to stop fluid calc
+// • $min-value(value = width) - smallest size
+// • $max-value(value = width) - largest size
+// -----------------------------------------------------------------------------
+
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  & {
+    @each $property in $properties {
+      #{$property}: $min-value + rem;
+    }
+
+    @media screen and (min-width: $min-vw) {
+      @each $property in $properties {
+        #{$property}: calc(#{$min-value + rem} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+    }
+
+    @media screen and (min-width: $max-vw) {
+      @each $property in $properties {
+        #{$property}: $max-value + rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+// Header base layout
+
+.jsa-body-lock {
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 500;
+
+  @include bp-max($bp-md) {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  @include bp-min($bp-md) {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  &:after {
+    background-color: $color-header-bg;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    transition: $transition-base;
+    z-index: 20;
+    opacity: 0;
+  }
+
+  .header__content {
+    @include outer-spacing(padding, horizontal);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    > div {
+      flex: 1 1 50%;
+    }
+  }
+
+  .header__logo {
+    position: relative;
+    width: 100%;
+    z-index: 30;
+
+    img {
+      width: 100%;
+      max-width: 225px;
+    }
+  }
+
+  .mobile-menu__icon {
+    @include bp-max($bp-md) {
+      position: relative;
+      z-index: 30;
+    }
+  }
+
+  .header__nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header__menu {
+    @include bp-min($bp-md) {
+      position: relative;
+      z-index: 30;
+    }
+  }
+}

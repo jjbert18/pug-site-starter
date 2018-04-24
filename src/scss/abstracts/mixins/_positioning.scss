@@ -1,0 +1,35 @@
+@charset 'UTF-8';
+
+// -----------------------------------------------------------------------------
+// Positioning mixins
+// Place on elements as desired
+//
+// Options:
+// • $position(value = position property) - fixed or absolute
+//
+// -----------------------------------------------------------------------------
+
+// === Top - Right - Bottom - Left === //
+@mixin trbl($position: absolute) {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: $position;
+}
+
+// === Top - Right - Left === //
+@mixin trl($position: absolute) {
+  top: 0;
+  right: 0;
+  left: 0;
+  position: $position;
+}
+
+// === Right - Bottom - Left === //
+@mixin rbl($position: absolute) {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: $position;
+}

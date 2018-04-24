@@ -1,0 +1,36 @@
+@charset 'UTF-8';
+
+// -----------------------------------------------------------------------------
+// Color variables
+//
+// -----------------------------------------------------------------------------
+
+// === Globals === //
+$color-white: #FFFFFF;
+$color-gray--light: #E8E8E8;
+$color-gray: #797979;
+$color-gray--dark: #424242;
+$color-black: #000000;
+$color-teal: #29dbb1;
+
+// === Content Specific === //
+// Copy text color
+$color-text: $color-gray--dark;
+
+// Main brand color
+$color-brand: $color-teal;
+
+// Background color
+$color-background: $color-gray--light;
+
+// === Color Map === //
+// Colors that will be used as classes in the color classes function
+// functions/_color-classes.scss
+$color-map: (
+  "white" $color-white,
+  "gray--light" $color-gray--light,
+  "gray" $color-gray,
+  "gray--dark" $color-gray--dark,
+  "black" $color-black,
+  "teal" $color-teal,
+);

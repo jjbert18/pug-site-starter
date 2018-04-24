@@ -1,0 +1,32 @@
+@charset 'UTF-8';
+
+// -----------------------------------------------------------------------------
+// Unit Conversions
+//
+// === px-to-rem === //
+// px-to-rem(14, true);
+// Used inside property or variable
+// Options:
+// • $px(value = number) - desired pixel value
+// • $unitless(value = true or false) - should the coversion end without a unit
+//
+// === strip-unit === //
+// strip-unit($value);
+// Used inside property or variable
+// Options:
+// • $value(value = number) - desired size any unit
+// -----------------------------------------------------------------------------
+
+// === px-to-rem === //
+@function px-to-rem($px, $unitless: false) {
+  @if $unitless == true {
+    @return $px / $base-font-size;
+  } @else {
+    @return ($px / $base-font-size) + rem;
+  }
+}
+
+// === strip-unit === //
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}

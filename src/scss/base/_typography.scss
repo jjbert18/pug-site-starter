@@ -1,0 +1,51 @@
+// -----------------------------------------------------------------------------
+// This file contains basic typography style for copy text
+// -----------------------------------------------------------------------------
+
+body {
+  color: $color-text;
+  font: normal 16px / 1.4 $font-secondary;
+}
+
+/*
+ * Headers
+ */
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: $font-primary;
+  font-size: 6rem;
+  font-weight: $font-weight-extra-bold;
+  line-height: 1;
+}
+
+h2 {
+  font-family: $font-primary;
+  font-size: 2.25rem;
+  font-weight: $font-weight-light;
+}
+
+h3 {
+  font-family: $font-primary;
+  font-size: 1.2rem;
+  font-weight: $font-weight-light;
+}
+
+p {
+  color: $color-gray;
+  font-weight: $font-weight-regular;
+  letter-spacing: 0.025em;
+  line-height: 1.5;
+
+  @include bp-max($bp-md) {
+    font-size: 0.9rem;
+    font-weight: $font-weight-regular;
+  }
+}
+
+a,
+a:visited {
+  color: $color-brand;
+}

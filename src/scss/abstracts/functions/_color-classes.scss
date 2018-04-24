@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+
+// -----------------------------------------------------------------------------
+// Color Classes: Function for adding color variables to classes
+//
+// .color-$color-name
+// .bg-$color-name
+//
+// $color-map found in variables/_var-color.scss
+//
+// -----------------------------------------------------------------------------
+
+@each $value in $color-map {
+  .color-#{nth($value, 1)} {
+    color: nth($value, 2);
+  }
+
+  .bg-#{nth($value, 1)} {
+    background-color: nth($value, 2);
+  }
+}

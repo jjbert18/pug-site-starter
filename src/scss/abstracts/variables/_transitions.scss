@@ -1,0 +1,10 @@
+@charset 'UTF-8';
+
+// -----------------------------------------------------------------------------
+// Transition variables
+//
+// -----------------------------------------------------------------------------
+
+$transition-base-time: 300ms;
+$transition-base-style: ease-in-out;
+$transition-base: all $transition-base-time $transition-base-style;

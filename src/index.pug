@@ -1,0 +1,10 @@
+extends ./structure/_layout.pug
+
+block body
+  body.page__home
+
+block content
+  //- === HERO ===
+  include ./components/hero/_template.pug
+  //- vars: textPosition, title, subtitle, description, image
+  +hero("left", "Hello!", "This is the home page" , "../../images/nathan-anderson-316188-unsplash.jpg", "Integer nec ultricies urna, at ullamcorper tortor. Curabitur dignissim lobortis nulla eget vulputate. Mauris vitae sollicitudin tortor, at euismod leo. Nam id nunc suscipit, tincidunt augue ac, tempor libero. Maecenas nec porta nibh. Aenean volutpat quam pharetra, pulvinar sapien a, placerat ligula. Nulla sit amet mollis mi.", "yes") 

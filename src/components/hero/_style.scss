@@ -1,0 +1,152 @@
+$bp-hero-play: 1200px;
+$bg-hero-grad: rgba($color-black, .9) 0%, rgba($color-black, 0) 75%;
+
+.hero {
+  background-size: cover;
+  background-color: $color-black;
+  color: $color-white;
+  position: relative;
+
+  .hero__gradient-overlay {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &.hero--left {
+    @include bp-max($bp-md) {
+      background-position: right;
+    }
+
+    .hero__gradient-overlay {
+      background: linear-gradient(to right, $bg-hero-grad);
+
+      @include bp-min($bp-md) {
+        background: linear-gradient(to right, $bg-hero-grad);
+      }
+    }
+
+    .hero__content {
+      display: flex;
+      flex-direction: row;
+
+      @include bp-max($bp-md) {
+        display: block;
+      }
+    }
+  }
+
+  &.hero--right {
+    @include bp-max($bp-md) {
+      background-position: left;
+    }
+
+    .hero__gradient-overlay {
+      background: linear-gradient(to right, $bg-hero-grad);
+
+      @include bp-min($bp-md) {
+        background: linear-gradient(to left, $bg-hero-grad);
+      }
+    }
+
+    .hero__content {
+      display: flex;
+      flex-direction: row-reverse;
+
+      @include bp-max($bp-md) {
+        display: block;
+      }
+    }
+  }
+
+  .hero__text {
+    padding: 10rem 0 5rem 0;
+
+    @include bp-min($bp-lg) {
+      flex-basis: 50%;
+      padding: 15rem 0 10rem 0;
+    }
+  }
+
+  .hero__text-title {
+    font-size: 6rem;
+    margin: 0;
+
+    @include bp-max($bp-md) {
+      font-size: 13vmin;
+    }
+  }
+
+  .hero__text-subtitle {
+    font-size: 2rem;
+    margin-bottom: 0;
+
+    @include bp-max($bp-md) {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .hero__text-subtitle--text {
+      display: inline-block;
+      padding-right: 1rem;
+    }
+
+    .hero__text-subtitle--span {
+      display: inline-block;
+      font-weight: $font-weight-extra-bold;
+
+      @include bp-max($bp-md) {
+        display: block;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .hero__text-description {
+    color: $color-white;
+    font-weight: $font-weight-light;
+    line-height: 1.75;
+
+    @include bp-min($bp-md) {
+      max-width: 75%;
+      padding-top: 1rem;
+    }
+  }
+
+  .hero__img {
+    flex-basis: 50%;
+
+    img {
+      display: none;
+      max-width: 50%;
+    }
+  }
+
+  .hero_btn {
+    margin-top: 2rem;
+  }
+
+  .hero__btn--sm {
+    display: block;
+    font-weight: $font-weight-extra-bold;
+    min-width: 288px;
+    max-width: 50%;
+    margin: 0;
+
+    @include bp-min($bp-md) {
+      max-width: 75%;
+    }
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.25rem;
+  }
+}

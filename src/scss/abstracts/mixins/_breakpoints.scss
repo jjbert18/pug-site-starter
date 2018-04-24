@@ -1,0 +1,49 @@
+@charset 'UTF-8';
+
+// -----------------------------------------------------------------------------
+// Breakpoints mixins
+// Place inside class to change style at different widths
+//
+// Options:
+// • $value(value = width) - width of breakpoint
+//
+// === bp-min === //
+// everything ABOVE the choosen width
+// @include bp-min($value) {
+//   @content
+// }
+//
+// === bp-max === //
+// everything UP TO the choosen width
+// @include bp-max($value) {
+//   @content
+// }
+//
+// === bp-min-max === //
+// everything INBETWEEN the 2 choosen widths
+// @include bp-min-max($min-value, $max-value) {
+//   @content
+// }
+//
+// === bp === //
+// everything ONLY AT the choosen width
+// @include bp($value) {
+//   @content
+// }
+// -----------------------------------------------------------------------------
+
+@mixin bp-min($value) {
+  @media (min-width: $value) { @content; }
+}
+
+@mixin bp-max($value) {
+  @media (max-width: $value) { @content; }
+}
+
+@mixin bp-min-max($min-value, $max-value) {
+  @media (min-width: $min-value) and (max-width: $max-value) { @content; }
+}
+
+@mixin bp($value) {
+  @media (width: $value) { @content; }
+}

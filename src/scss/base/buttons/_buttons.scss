@@ -1,0 +1,32 @@
+.btn {
+  display: flex;
+  align-items: center;
+  flex: 1 1 40%;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: $transition-base;
+  width: 100%;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn--secondary {
+  border: 2px solid $color-brand;
+  background-color: transparent;
+  color: $color-brand;
+  text-align: center;
+}
+
+.btn--secondary:hover,
+.btn--secondary:active {
+  color: $color-white;
+  background-color: $color-brand;
+}

@@ -1,0 +1,14 @@
+mixin hero(textPosition, title, subtitle, bg_image, description, heroGrad)
+  section.hero(style="background-image: url(" + bg_image + ")" class="hero--" + textPosition )
+    if heroGrad
+      .hero__gradient-overlay
+    .container.hero__content
+      .hero__text
+        h1.hero__text-title= title
+        if subtitle
+          h2.hero__text-subtitle
+            span.hero__text-subtitle--text= subtitle
+        if description
+          p.hero__text-description= description
+        .hero_btn
+          a.hero__btn--sm.btn.btn--secondary.btn--hero Hero button

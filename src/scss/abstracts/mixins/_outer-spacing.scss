@@ -1,0 +1,73 @@
+// -----------------------------------------------------------------------------
+// Container margin
+// @include outer-spacing();
+// Apply to container where spacing is needed on the outside
+//
+// Options:
+// • $property(value = margin or padding) - default = margin - changes property
+// • $direction(value = vertical, horizontal, or both) - default = horizontal - applies property to sides
+// • $lg-space(value = true or false) - default = false - be normal width or special large width
+// • $breakpoint(value = breakpoint variable) - default = $bp-md - breakpoint on when to go from medium to small
+//
+// @include outer-spacing($property: padding, $direction: both, $lg-space: true, $breakpoint: $bp-md);
+// -----------------------------------------------------------------------------
+
+@mixin outer-spacing (
+  $property: margin,
+  $direction: horizontal,
+  $lg-space: false,
+  $breakpoint: $bp-md
+  ) {
+
+  // Direction == horizontal
+  @if $direction == horizontal {
+    #{$property}-left: $spacing-horizontal-sm;
+    #{$property}-right: $spacing-horizontal-sm;
+
+    @include bp-min($breakpoint) {
+      @if $lg-space == true {
+        #{$property}-left: $spacing-horizontal-lg;
+        #{$property}-right: $spacing-horizontal-lg;
+      } @else {
+        #{$property}-left: $spacing-horizontal-md;
+        #{$property}-right: $spacing-horizontal-md;
+      }
+    }
+
+  // Direction == vertical
+  } @else if $direction == vertical {
+    #{$property}-bottom: $spacing-vertical-sm;
+    #{$property}-top: $spacing-vertical-sm;
+
+    @include bp-min($breakpoint) {
+      @if $lg-space == true {
+        #{$property}-bottom: $spacing-vertical-lg;
+        #{$property}-top: $spacing-vertical-lg;
+      } @else {
+        #{$property}-bottom: $spacing-vertical-md;
+        #{$property}-top: $spacing-vertical-md;
+      }
+    }
+
+  // Direction == both horizontal and vertical
+  } @else if $direction == both {
+    #{$property}-top: $spacing-vertical-sm;
+    #{$property}-right: $spacing-horizontal-sm;
+    #{$property}-bottom: $spacing-vertical-sm;
+    #{$property}-left: $spacing-horizontal-sm;
+
+    @include bp-min($breakpoint) {
+      @if $lg-space == true {
+        #{$property}-top: $spacing-vertical-lg;
+        #{$property}-right: $spacing-horizontal-lg;
+        #{$property}-bottom: $spacing-vertical-lg;
+        #{$property}-left: $spacing-horizontal-lg;
+      } @else {
+        #{$property}-top: $spacing-vertical-md;
+        #{$property}-right: $spacing-horizontal-md;
+        #{$property}-bottom: $spacing-vertical-md;
+        #{$property}-left: $spacing-horizontal-md;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+
+// -----------------------------------------------------------------------------
+// Asset Pathing varibales
+// Used in the asset pathing function functions/_asset-pathing.scss
+//
+// Options:
+// • $type(value = file type) - image, icon, or font
+// • $file-name(value = file name) - name of file
+//
+// -----------------------------------------------------------------------------
+
+$image-path: '../../images/';
+$icon-path: '../../icons/';
+$font-path: '../../fonts/';
+$base-path: '../../';

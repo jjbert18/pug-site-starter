@@ -1,0 +1,10 @@
+extends ./structure/_layout.pug
+
+block body
+  body.page__two
+
+block content
+  //- === HERO ===
+  include ./components/hero/_template.pug
+  //- vars: textPosition, title, subtitle, description, image
+  +hero("right", "Page 2", "A secondary page" , "../../images/aniket-deole-527363-unsplash.jpg", "Integer nec ultricies urna, at ullamcorper tortor. Curabitur dignissim lobortis nulla eget vulputate. Mauris vitae sollicitudin tortor, at euismod leo. Nam id nunc suscipit, tincidunt augue ac, tempor libero. Maecenas nec porta nibh. Aenean volutpat quam pharetra, pulvinar sapien a, placerat ligula. Nulla sit amet mollis mi.", "yes")

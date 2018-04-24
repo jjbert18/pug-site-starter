@@ -1,0 +1,36 @@
+@charset 'UTF-8';
+
+// -----------------------------------------------------------------------------
+// Asset Pathing function
+// Used in properties for common asset paths
+// Replace the prefixes with the paths specific to your project
+// and add or remove conditions (if / else statements) as necessary
+//
+// * $type and $file-name must both be strings: ""
+//
+// Options:
+// • $type(value = file type) - image, icon, or font
+// • $file-name(value = file name) - name of file
+//
+// Usage:
+// asset-path("icon", "my-icon/test.png") = ./project/files/images/icons/my-icon-test.png
+// asset-path("doc", "xyz.doc") = ./project/files/xyz.doc
+//
+// -----------------------------------------------------------------------------
+
+@function asset-path($type, $file-name) {
+
+  $prefix: null;
+
+  @if $type == image {
+    $prefix: $image-path;
+  } @else if $type == icon {
+    $prefix: $icon-path;
+  } @else if $type == font {
+    $prefix: $font-path;
+  } @else {
+    $prefix: $base-path;
+  }
+
+  @return $prefix + $file-name;
+}

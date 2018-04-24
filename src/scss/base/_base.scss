@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic body styles
+ */
+body {
+  background-color: $color-white;
+  font-family: $font-secondary;
+  font-weight: $font-weight-regular;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 0 0 auto;
+}
+
+.container {
+  @include outer-spacing(padding, both);
+
+  @include bp-min($bp-md) {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+}

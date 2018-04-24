@@ -1,0 +1,25 @@
+// Header styles when site is scrolled
+
+.header {
+  &.jsa-visible {
+    @include bp-min($bp-md) {
+      padding-top: 1rem;
+    }
+
+    &:after {
+      opacity: 1;
+    }
+
+    .header__menu-item .header__menu-item-link {
+      text-shadow: none;
+    }
+  }
+}
+
+.header,
+.header .header__bg,
+.header .header__logo,
+.header .header__logo img,
+.header .header__nav {
+  transition: $transition-base;
+}
