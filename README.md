@@ -4,9 +4,9 @@ This is an opinionated project starter using:
 
 * Task Runner: Gulp
 * Transpiler: Babel
-* JavaScript: TypeScript
+* JavaScript: jQuery as default **TypeScript can be enabled*
 * CSS PreProcessor: Sass
-* Extras: Browsersync
+* Extras: Browsersync and auto Build directory zip
 * HTML Templating Engine: Pug
 
 It expects the following project structure:
@@ -14,15 +14,30 @@ It expects the following project structure:
 ```
 gulpfile.js
 package.json
--- index.ts
--- styles.scss
--- index.pug
--- components/
------ _imports.scss // Imports for all components Sass files
------ header
-------- _header.scss
-------- header.pug
-------- header.ts
+
+src
+ -- index.pug
+ -- styles.scss
+ -- components
+ ---- header
+ ------ _script.js
+ ------ _style.scss
+ ------ _template.pug
+ -- images
+ -- icons
+ -- scss
+ ---- abstracts
+ ------ fonts
+ ------ functions
+ ------ mixins
+ ------ variables
+ ---- base
+ -- structure
+ ---- _layout.pug
+ ---- _scripts.pug
+ 
+vendor
+ -- vendor-library
 ```
 
 1. `npm install gulp -g` if you haven't already
