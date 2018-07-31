@@ -7,42 +7,39 @@ body {
   font: normal 16px / 1.4 $font-secondary;
 }
 
-/*
- * Headers
- */
-h1, h2, h3 {
-  text-transform: uppercase;
+// === Headers === //
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-  font-family: $font-primary;
-  font-size: 6rem;
-  font-weight: $font-weight-extra-bold;
-  line-height: 1;
+  @include type-h1();
 }
 
 h2 {
-  font-family: $font-primary;
-  font-size: 2.25rem;
-  font-weight: $font-weight-light;
+  @include type-h2();
 }
 
 h3 {
-  font-family: $font-primary;
-  font-size: 1.2rem;
-  font-weight: $font-weight-light;
+  @include type-h3();
+}
+
+h4 {
+  @include type-h4();
+}
+
+// === Paragraphs === //
+p.type-p-plus {
+  @include type-p-plus();
 }
 
 p {
-  color: $color-gray;
-  font-weight: $font-weight-regular;
-  letter-spacing: 0.025em;
-  line-height: 1.5;
+  @include type-p();
+}
 
-  @include bp-max($bp-md) {
-    font-size: 0.9rem;
-    font-weight: $font-weight-regular;
-  }
+p.type-p-minus {
+  @include type-p-minus();
 }
 
 a,

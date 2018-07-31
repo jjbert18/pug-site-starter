@@ -1,0 +1,40 @@
+// -----------------------------------------------------------------------------
+// Component: Pods and Peas - Pod
+// -----------------------------------------------------------------------------
+
+.pod {
+  padding: 5rem;
+  position: relative;
+
+  .pod__title {
+    margin-bottom: 2.5rem;
+  }
+
+  .pod__side-text {
+    @include type-p-minus();
+    font-family: $font-secondary;
+    position: absolute;
+    top: 50%;
+    text-transform: uppercase;
+    transform: translateY(-50%) rotate(-90deg);
+    left: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    letter-spacing: 0.25em;
+  }
+
+  .pod__content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include bp-min($bp-md) {
+      flex-direction: row;
+    }
+
+    @include bp-min($bp-lg) {
+      flex-wrap: nowrap;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+//- === Component: Card Grid === -//
+//- Vars: image, title, link, linkText, text
+
+mixin cardGrid()
+  section.container.card-grid
+    if block
+      block
+
+mixin card(image, title, link, linkText, text)
+  if image
+    article.card.card--bg-img(style="background-image: url(" + image + ")")
+      .card__content
+        h4= title
+        p= text
+        a(href=link)= linkText
+  else
+    article.card
+      .card__content
+        h4= title
+        p= text
+        a(href=link)= linkText

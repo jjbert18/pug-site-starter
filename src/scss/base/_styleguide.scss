@@ -1,0 +1,41 @@
+// -----------------------------------------------------------------------------
+// Styleguide specific styles
+// -----------------------------------------------------------------------------
+
+.sg-title {
+  margin-bottom: 5rem;
+  border-bottom: 1px solid black;
+}
+
+.colors {
+  display: grid;
+  grid-gap: $spacing-horizontal-sm;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+
+  @include bp-min($bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include bp-min($bp-lg) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .colors__color {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .colors__color-box {
+    box-shadow: 0 0.125rem 0.125rem 0.0625rem rgba($color-black, 0.25);
+    flex: 1 1 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .colors__color-label {
+    flex: 1 1 auto;
+  }
+}

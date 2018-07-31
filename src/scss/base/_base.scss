@@ -25,12 +25,13 @@ html {
  * Basic body styles
  */
 body {
-  background-color: $color-white;
+  background-color: $color-background;
   font-family: $font-secondary;
   font-weight: $font-weight-regular;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .main-content {
@@ -38,10 +39,18 @@ body {
 }
 
 .container {
-  @include outer-spacing(padding, both);
+  @include outer-spacing();
 
-  @include bp-min($bp-md) {
+  @include bp-min($bp-xlg) {
     max-width: $max-width;
     margin: 0 auto;
   }
+}
+
+section:first-of-type:not(.hero) {
+  margin-top: calc(#{$header-height} + #{$spacing-vertical-sm});
+}
+
+section:last-of-type:not(.hero) {
+  margin-bottom: $spacing-vertical-md;
 }

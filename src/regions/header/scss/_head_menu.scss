@@ -3,7 +3,7 @@
 .header {
   .header__menu {
     @include bp-max($bp-md - 1) {
-      background-color: $color-header-bg;
+      background-color: $color-header-bg-full;
       left: 100%;
       position: absolute;
       right: 0;
@@ -64,7 +64,7 @@
     .header__menu-item-link {
       border-bottom: 0.15rem solid transparent;
       border-top: 0.15rem solid transparent;
-      color: white;
+      color: $color-off-white;
       font-size: 1rem;
       font-weight: $font-weight-extra-bold;
       letter-spacing: 0.05rem;
@@ -74,7 +74,7 @@
 
       @include bp-min($bp-md) {
         font-size: 1.5vw;
-        text-shadow: 0 3px 5px rgba(0, 0, 0, .25);
+        text-shadow: 0 3px 5px rgba($color-black, 0.25);
       }
 
       @include bp-min($bp-lg) {
@@ -82,7 +82,7 @@
       }
 
       &:hover {
-        border-bottom-color: $color-white;
+        border-bottom-color: $color-off-white;
       }
     }
   }

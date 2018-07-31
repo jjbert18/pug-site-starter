@@ -1,0 +1,51 @@
+extends structure/_layout
+
+block vars
+  title Styleguide
+
+block body
+  body.page__styleguide
+
+block content
+  // typography
+  section.styleguide
+    .container
+      h2 Typography
+
+      h1 h1 Heading One
+      h2 h2 Heading Two
+      h3 h3 Heading Three
+      h4 h4 Heading Four
+      p.type-p-plus Pragraph Plus: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero ex, faucibus et commodo vitae, malesuada id velit. Maecenas non velit semper, pellentesque risus vitae, porttitor sem.
+      p Pragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero ex, faucibus et commodo vitae, malesuada id velit. Maecenas non velit semper, pellentesque risus vitae, porttitor sem.
+      p.type-p-minus Pragraph Minus: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero ex, faucibus et commodo vitae, malesuada id velit. Maecenas non velit semper, pellentesque risus vitae, porttitor sem.
+
+  // colors
+  section.styleguide
+    .container
+      h2 Colors
+
+      ul.colors
+        li.colors__color
+          .colors__color-box.bg-acadia
+          label.colors__color-label Acadia #333831 <br> $color-acadia
+
+        li.colors__color
+          .colors__color-box.bg-kelp
+          label.colors__color-label Kelp #294629 <br> $color-kelp
+
+        li.colors__color
+          .colors__color-box.bg-avocado
+          label.colors__color-label Avocado #487c48 <br> $color-avocado
+
+        li.colors__color
+          .colors__color-box.bg-sprout
+          label.colors__color-label Sprout #80c784 <br> $color-sprout
+
+        li.colors__color
+          .colors__color-box.bg-mercury
+          label.colors__color-label Mercury #e4e4e4 <br> $color-mercury
+
+        li.colors__color
+          .colors__color-box.bg-off-white
+          label.colors__color-label Off-white #fcfff3 <br> $color-off-white

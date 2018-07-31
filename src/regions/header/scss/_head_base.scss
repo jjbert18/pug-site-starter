@@ -5,15 +5,16 @@
 }
 
 .header {
+  max-height: $header-height;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 500;
 
   @include bp-max($bp-md) {
-    height: 5rem;
     display: flex;
     align-items: center;
+    height: 5rem;
   }
 
   @include bp-min($bp-md) {
@@ -22,7 +23,7 @@
   }
 
   &:after {
-    background-color: $color-header-bg;
+    background-color: $color-header-bg-full;
     content: '';
     position: absolute;
     left: 0;
@@ -35,7 +36,7 @@
   }
 
   .header__content {
-    @include outer-spacing(padding, horizontal);
+    @include outer-spacing();
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -52,8 +53,8 @@
     z-index: 30;
 
     img {
-      width: 100%;
-      max-width: 225px;
+      max-width: 100%;
+      max-height: 50px;
     }
   }
 

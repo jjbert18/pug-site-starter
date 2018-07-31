@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// Component: Contact Bar
+// -----------------------------------------------------------------------------
+
+.contact-bar {
+
+  .container {
+    align-items: center;
+    background-color: $color-mercury;
+    display: flex;
+    padding: 2.5rem;
+  }
+
+  h4 {
+    color: $color-kelp;
+    margin-right: 5%;
+  }
+
+  .contact-bar__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    li {
+      margin-right: 5%;
+
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

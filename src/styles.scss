@@ -6,10 +6,13 @@
 // 2. Base stuff
 @import "scss/base/imports";
 
-// 3. Components
+// 3. Regions
+@import "regions/imports";
+
+// 4. Components
 @import "components/imports";
 
-// 4. Vendors
+// 5. Vendors
 @import
 "../vendor/slick/slick",
 "../vendor/slick/slick-theme",

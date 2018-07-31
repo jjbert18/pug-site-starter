@@ -1,0 +1,11 @@
+//- === Component: Callout === -//
+//- Vars: image, title, textParagraph1, textParagraph2
+
+mixin callout(image, title, textParagraph1, textParagraph2)
+  article.callout
+    .callout__content
+      h4= title
+      p= textParagraph1
+      if textParagraph2
+        p= textParagraph2
+    .callout__image(style="background-image: url(" + image + ")")
