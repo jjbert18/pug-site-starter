@@ -1,0 +1,26 @@
+@charset 'UTF-8';
+@import "../../scss/abstracts/imports";
+
+// -----------------------------------------------------------------------------
+// Component: Sidebar
+// -----------------------------------------------------------------------------
+
+.sidebar {
+  background-color: $color-mercury;
+  margin-bottom: $vertical-rhythm-sm;
+  position: sticky;
+  top: calc(#{$header-height} + #{$spacing-vertical-sm});
+  width: 100%;
+
+  @include bp-min($bp-md) {
+    max-width: 25%;
+  }
+
+  .sidebar__info {
+    padding: 1.5rem 1.5rem 3rem;
+
+    .contact-links li {
+      margin-top: 1rem;
+    }
+  }
+}

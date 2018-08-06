@@ -1,0 +1,44 @@
+//- === Component: Pod === -//
+//- Vars: bgColor, textColor, title, sideText
+
+//- Stylesheet:
+block append stylesheets
+  link(rel="stylesheet" href="./../components/pod/style.css")
+
+//- Mixin:
+mixin pod(podClass, podWrap, bgColor, textColor, title, sideText)
+  if bgColor
+    section.container.pod(class="pod--" + podClass + " bg-" + bgColor + " color-" + textColor)
+      if title
+        header.pod__header
+          h4.pod__header-title= title
+
+          if sideText
+            p.pod__header-side-text= sideText
+
+      if podWrap
+        if block
+          block
+
+      else
+        .pod__content
+          if block
+            block
+
+  else
+    section.container.pod(class="pod--" + podClass)
+      if title
+        header.pod__header
+          h4.pod__header-title= title
+
+          if sideText
+            p.pod__header-side-text= sideText
+
+      if podWrap
+        if block
+          block
+
+      else
+        .pod__content
+          if block
+            block

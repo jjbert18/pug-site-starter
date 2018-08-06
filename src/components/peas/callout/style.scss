@@ -1,0 +1,60 @@
+@charset 'UTF-8';
+@import "../../../scss/abstracts/imports";
+
+// -----------------------------------------------------------------------------
+// Component: Pea - Callout
+// -----------------------------------------------------------------------------
+
+.pea-callout {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 2.5rem;
+
+  @include bp-min($bp-md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:nth-of-type(even) {
+    @include bp-min($bp-md) {
+      flex-direction: row-reverse;
+    }
+
+    .pea-callout__image {
+      @include bp-min($bp-md) {
+        background-position: right center;
+      }
+    }
+  }
+
+  .pea-callout__content,
+  .pea-callout__image {
+    @include bp-min($bp-md) {
+      flex: 1 1 50%;
+    }
+  }
+
+  .pea-callout__content {
+    padding: 1.5rem 0;
+
+    @include bp-min($bp-md) {
+      padding: 1.5rem;
+    }
+
+    h4 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .pea-callout__image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+    min-height: 50vh;
+  }
+}

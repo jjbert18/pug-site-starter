@@ -1,0 +1,6 @@
+//- === Structure: Stylesheet links === -//
+//- Vars: folderName
+
+mixin stylesheets(folderName)
+  block stylesheets
+    link(rel="stylesheet" href="./../components/" + folderName + "/style.css")

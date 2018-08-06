@@ -1,36 +1,203 @@
 extends ./structure/_layout.pug
 
-block body
-  body.page__home
+//- ====== Block: Vars ====== -//
+//- Code that goes in the <head> tag
+block vars
 
+  //- === Structure: SEO meta tags === -//
+  include structure/_meta.pug
+  +meta(baseTitle, "Homepage", "key, word")
+
+//- === Mixin Template Includes === -//
+//- Include the templates for the mixins below
+include ./components/scroll-link/_template.pug
+include ./components/hero/_template.pug
+include ./components/pod/_template.pug
+include ./components/peas/callout/_template.pug
+include ./components/peas/base/_template.pug
+include ./components/peas/card/_template.pug
+include ./components/contact-bar/_template.pug
+
+//- ====== Block: Content ====== -//
+//- All content between the <header> and <footer>
 block content
+
   //- === Component: Hero === -//
-  include ./components/hero/_template.pug
-  +hero("left", "Hello!", "This is the home page" , "../../images/nathan-anderson-316188-unsplash.jpg", "Integer nec ultricies urna, at ullamcorper tortor. Curabitur dignissim lobortis nulla eget vulputate. Mauris vitae sollicitudin tortor, at euismod leo. Nam id nunc suscipit, tincidunt augue ac, tempor libero. Maecenas nec porta nibh. Aenean volutpat quam pharetra, pulvinar sapien a, placerat ligula. Nulla sit amet mollis mi.", "yes")
+  +hero(
+    "left",
+    "../../images/house1.jpg",
+    "Richard Clayton Barrett",
+    "Landscape Architect",
+    "For Nearly 40 Years – Richard Clayton Barrett has been one of the premiere Landscape Architects in the country.",
+    "/interior.pug",
+    "Contact Today",
+    "../../images/RCB-weblogo.png",
+    "Richard Clayton Barrett"
+  )
 
-  //- === Component: Callout === -//
-  section.container
-    include components/callout/_template.pug
-    +callout('https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1', 'title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at hendrerit neque. Pellentesque sodales dui ut tortor lacinia, vel dignissim nisl accumsan. Donec sagittis tempus mi, ac pharetra sapien volutpat et.', 'Proin vitae neque facilisis, vulputate ante et, hendrerit arcu. Aliquam erat volutpat. Suspendisse nec felis placerat, mollis elit in, venenatis dolor. Vivamus a diam ut nibh auctor ornare.')
-    +callout('https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1', 'title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at hendrerit neque. Pellentesque sodales dui ut tortor lacinia, vel dignissim nisl accumsan. Donec sagittis tempus mi, ac pharetra sapien volutpat et.')
 
-  //- === Component: Pods and Peas === -//
-  include components/pods-and-peas/_template.pug
-  +pod('sprout', 'white', 'title', 'side text')
-    +pea('title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at hendrerit neque. Pellentesque sodales dui ut tortor lacinia, vel dignissim nisl accumsan. Donec sagittis tempus mi, ac pharetra sapien volutpat et.')
-    +pea('title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at hendrerit neque. Pellentesque sodales dui ut tortor lacinia, vel dignissim nisl accumsan. Donec sagittis tempus mi, ac pharetra sapien volutpat et.')
-    +pea('title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at hendrerit neque. Pellentesque sodales dui ut tortor lacinia, vel dignissim nisl accumsan. Donec sagittis tempus mi, ac pharetra sapien volutpat et.')
-    +pea('title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at hendrerit neque. Pellentesque sodales dui ut tortor lacinia, vel dignissim nisl accumsan. Donec sagittis tempus mi, ac pharetra sapien volutpat et.')
+  //- === Component: Scroll Link === -//
+  +scrollHere("about")
+
+  //- === Component: Callout Peas === -//
+  +pod(
+    "callout",
+    "wrap")
+
+    +peaCallout(
+      "../../images/front-yard-meadow.jpg",
+      "Landscape Architecture",
+      "Landscaping represents 20% of the value of your home or building and creating a living environment that will last for many years to come is essential in the quality and longevity of your plan.",
+      "Rick has spent the better portion of his professional career in the design, lawn, & landscape business and is a state - licensed design professional with a degree in landscape architecture. Rick also serves on top Landscape Architect Associations in the country and is highly regarded in the industry."
+    )
+
+    +peaCallout(
+      "../../images/image.jpg",
+      "Dreams to Reality",
+      "Landscape Architecture is the art of creating visually interesting and meaningful designs that provide for health, safety and well being, while preserving the environment. Rick Barrett treats your architectural desires as a top priority.",
+      "For Rick, Landscape Architecture involves combining living, breathing elements and aesthetics with sound financial decisions. From his desire to work with you in every aspect of your project, you can be assured that Rick Barrett will follow through in every step of the process."
+    )
+
+
+  //- === Component: Base Peas === -//
+  +pod(
+    "base",
+    "",
+    "sprout",
+    "white",
+    "Why choose a landscape architect?",
+    "Richard Clayton Barrett")
+
+    +pea(
+      "Complete landscape architectural services",
+      "Unless you have the skills - you probably wouldn't just run to a lumber yard and try to build your own home. But most of us have no problem running to the store and buying plants, shrubs and trees and digging holes in the ground."
+    )
+
+    +pea(
+      "A guide through the process",
+      "A landscape architect will help you with the total decision making process and implement an approved plan to ensure proper growth, drainage, design, color choices, and a solid future."
+    )
+
+    +pea(
+      "One or many designs",
+      "You many only need a good design and be able to implement that plan on your own. Or you may want someone who can help you every step of the project. The key is to start with a solid plan. This is where Rick Barrett will help you!"
+    )
+
+
+
+
+
 
   //- === Component: Contact Bar === -//
-  include components/contact-bar/_template.pug
   +contactBar()
 
   //- === Component: Card Grid === -//
-  include components/card-grid/_template.pug
-  +cardGrid()
-    +card('', 'title', 'http://localhost:3000/styleguide.html', 'link to content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
-    +card('', 'title', 'http://localhost:3000/styleguide.html', 'link to content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
-    +card('https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1', 'title', 'http://localhost:3000/styleguide.html', 'link to content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
-    +card('https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1', 'title', 'http://localhost:3000/styleguide.html', 'link to content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
-    +card('', 'title', 'http://localhost:3000/styleguide.html', 'link to content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+  +pod(
+    "card-grid",
+    "wrap"
+  )
+
+    +peaCard(
+      "",
+      "Video Gallery",
+      "/interior.html",
+      "Find out more",
+      "Follow Candi and Jason as they rebuild their entire landscape from start to finish."
+    )
+
+    +peaCard(
+      "",
+      "Toby Tobin",
+      "/interior.html",
+      "Find out more",
+      "For over ten years – Richard Clayton Barrett has been a regular on the Toby Tobin Radio Show on 980 KMBZ AM in Kansas City."
+    )
+
+    +peaCard(
+      "../../images/image3.jpg",
+      "Bee keeping",
+      "/interior.html",
+      "Find out more",
+      "Bees are endangered and primary to our food supply as humans, so it is a super important aspect to our lives to make sure they survive."
+    )
+
+    +peaCard(
+      "../../images/house1.jpg",
+      "The landscape gardens of Capability Brown",
+      "/interior.html",
+      "Find out more",
+      "A presentation on 18th century English Gardens."
+    )
+
+    +peaCard(
+      "",
+      "Testimonials",
+      "/interior.html",
+      "Find out more",
+      "\"Rick is the only person I would ever trust with my own home. His integrity, values, quality of work and knowledge are second to none.\""
+    )
+
+
+  //- === Component: Scroll Link === -//
+  +scrollHere("services")
+
+  //- === Component: Hero === -//
+  +hero(
+    "left",
+    "../../images/image2.jpg",
+    "",
+    "Services"
+  )
+
+    //- Hero inside content
+    p Complete Landscape Architectural Services
+      ul
+        li Onsite Consultation
+        li Landscape Architectural Design & Engineering
+        li Bidding
+        li Construction Administration
+        li LEED Green Associate
+
+    p Site Administration
+      ul
+        li Landscape Installation
+        li Irrigation
+        li Lighting
+
+    p Community Outreach
+      ul
+        li Landscape & Gated Historical Presentations
+
+
+
+
+  //- === Component: Base Peas === -//
+  +pod(
+    "base",
+    "",
+    "mercury",
+    "",
+    "Latest News & Accomplishments",
+    "Richard Clayton Barrett"
+  )
+
+    +pea(
+      "Regular with Toby Tobin",
+      "For over thirty years now – Richard Clayton Barrett has been a regular on the cast of characters on the Toby Tobin Radio Show on 980 KMBZ AM in Kansas City. Rick is one of Toby’s most trusted sidekicks on the show for expert advice on landscaping, plants, planting, and much more.",
+      "/interior.html",
+      "Read More"
+    )
+
+    +pea(
+      "Exceeded our expectations",
+      "\"Sometimes you don’t know how good somebody really is until you’ve had work done on your home that was really bad! I spend big bucks to have some work done by a company that turned out to be untrustworthy. Rick has exceeded our expectations and made our home beautiful\"",
+      "/interior.html",
+      "Read More"
+    )
+
+    +pea(
+      "Every step of the way",
+      "You may only need a good design and be able to implement the plan from there. Or you may want someone who can help you every step of the way. The key is to start with a solid plan. This is where Rick can help you!",
+      "/interior.html",
+      "Read More"
+    )

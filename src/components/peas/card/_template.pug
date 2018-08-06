@@ -1,0 +1,21 @@
+//- === Component: Card Grid === -//
+//- Vars: image, title, linkUrl, linkText, text
+
+//- Stylesheet:
+block append stylesheets
+  link(rel="stylesheet" href="./../components/peas/card/style.css")
+
+//- Mixin:
+mixin peaCard(image, title, linkUrl, linkText, text)
+  if image
+    article.pea-card.pea-card--bg-img(style="background-image: url(" + image + ")")
+      .pea-card__content
+        h4= title
+        p= text
+        a(href=linkUrl)= linkText
+  else
+    article.pea-card
+      .pea-card__content
+        h4= title
+        p= text
+        a(href=linkUrl)= linkText

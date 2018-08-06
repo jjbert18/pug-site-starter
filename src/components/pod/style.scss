@@ -1,0 +1,68 @@
+@charset 'UTF-8';
+@import "../../scss/abstracts/imports";
+
+// -----------------------------------------------------------------------------
+// Component: Pod
+// -----------------------------------------------------------------------------
+
+.pod {
+  @include vertical-rhythm();
+  position: relative;
+  padding-bottom: $vertical-rhythm-sm;
+
+  @include bp-min($bp-md) {
+    padding-bottom: $vertical-rhythm-md;
+  }
+
+  .pod__header-title {
+    @include outer-spacing($container: true);
+    padding-bottom: 2.5rem;
+  }
+
+  .pod__header-side-text {
+    @include type-p-minus();
+    color: $color-kelp;
+    display: none;
+    font-family: $font-secondary;
+    left: 0;
+    letter-spacing: 0.25em;
+    line-height: 1;
+    margin: 0;
+    opacity: 0.25;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    text-transform: uppercase;
+    transform: translate(-33%, -50%) rotate(-90deg);
+
+    @include bp-min($bp-lg) {
+      display: block;
+    }
+  }
+
+  .pod__content {
+    @include outer-spacing($container: true);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include bp-min($bp-md) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+// Callout Pod
+.pod--callout {
+  @include outer-spacing($container: true);
+}
+
+// Card Grid Pod
+.pod--card-grid {
+  @include outer-spacing($container: true);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 0;
+}

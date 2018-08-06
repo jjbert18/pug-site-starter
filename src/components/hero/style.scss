@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+@import "../../scss/abstracts/imports";
+
+// -----------------------------------------------------------------------------
+// Component: Hero
+// -----------------------------------------------------------------------------
+
+$bg-hero-grad: rgba($color-black, 0.75) 0%, rgba($color-avocado, 0.35) 75%;
+
+@import
+"base",
+"left",
+"right";

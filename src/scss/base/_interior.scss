@@ -1,0 +1,74 @@
+// -----------------------------------------------------------------------------
+// Base: Interior
+// -----------------------------------------------------------------------------
+
+.interior {
+  @include outer-spacing($container: true);
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+
+  .interior__header {
+    flex: 1 1 100%;
+  }
+
+  .interior__title {
+    margin: $vertical-rhythm-xsm 0;
+
+    @include bp-min($bp-md) {
+      margin-top: $vertical-rhythm-sm;
+    }
+  }
+
+  .interior__subtitle {
+    margin-bottom: $vertical-rhythm-sm;
+  }
+
+  .interior__content {
+    margin-bottom: $vertical-rhythm-sm;
+
+    @include bp-min($bp-md) {
+      max-width: 75%;
+      padding-right: 10%;
+    }
+
+    p {
+      margin: 2rem 0;
+
+      .image {
+        float: left;
+        max-width: 45%;
+        padding: 1em 2em;
+        padding-left: 0;
+      }
+    }
+
+    blockquote {
+      @include type-h4();
+      display: flex;
+      flex-direction: column;
+      font-family: $font-secondary;
+      line-height: $type-p-line;
+      margin: $vertical-rhythm-md 0;
+      text-align: center;
+
+      &:before {
+        content: '\201C';
+        font-family: $font-primary;
+        font-size: 4rem;
+        font-weight: $font-weight-bold;
+        line-height: 1;
+      }
+    }
+
+    .pod,
+    .pod__header,
+    .pod__content {
+      padding: 0;
+    }
+
+    .pod {
+      padding-top: $vertical-rhythm-md;
+    }
+  }
+}

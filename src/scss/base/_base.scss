@@ -28,6 +28,7 @@ body {
   background-color: $color-background;
   font-family: $font-secondary;
   font-weight: $font-weight-regular;
+  margin: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -47,10 +48,35 @@ body {
   }
 }
 
-section:first-of-type:not(.hero) {
+main {
   margin-top: calc(#{$header-height} + #{$spacing-vertical-sm});
 }
 
-section:last-of-type:not(.hero) {
-  margin-bottom: $spacing-vertical-md;
+.hero:first-of-type {
+  margin-top: calc(#{-$header-height} + #{-$spacing-vertical-sm});
+
+  .hero__text-title {
+    @include bp-min($bp-lg) {
+      padding-top: 6rem;
+    }
+  }
+}
+
+.hero:not(:first-of-type) {
+  @include vertical-rhythm($property: margin);
+}
+
+.image {
+  img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: top;
+  }
+
+  img + label {
+    @include type-p-minus();
+    opacity: 0.5;
+    font-family: $font-secondary;
+    margin-top: 0.5rem;
+  }
 }

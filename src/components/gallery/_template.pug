@@ -1,0 +1,16 @@
+//- === Component: Gallery === -//
+//- Vars: imageAlt, caption
+
+//- Stylesheet:
+block append stylesheets
+  link(rel="stylesheet" href="./../components/gallery/style.css")
+
+//- Mixin:
+mixin gallery(imageAlt, caption)
+  section.gallery
+    if block
+      .gallery__main.js-gallery
+        block
+
+        if caption
+          label= imageAlt

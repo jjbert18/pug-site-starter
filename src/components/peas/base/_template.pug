@@ -1,0 +1,15 @@
+//- === Component: Base Peas === -//
+//- Vars: title, text, linkUrl, linkText
+
+//- Stylesheet:
+block append stylesheets
+  link(rel="stylesheet" href="./../components/peas/base/style.css")
+
+//- Mixin:
+mixin pea(title, text, linkUrl, linkText)
+  article.pea
+    p.pea__title= title
+    p.pea__text= text
+
+    if linkUrl
+      a.pea__link(href=linkUrl)= linkText

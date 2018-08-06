@@ -1,8 +1,11 @@
+//- === Mixin Template Includes === -//
+include ../../components/scroll-link/_template.pug
+
 header.header
   .header__content
     .header__logo
       a(href="/")
-        img(src="../../images/RCB-weblogo.png")
+        // img(src="../../images/RCB-weblogo.png")
 
     .header__nav
       button.mobile-menu__icon.js-mobile-menu__icon
@@ -14,6 +17,22 @@ header.header
       nav.header__menu
         ul.header__menu-list
           li.header__menu-item
-            a.header__menu-item-link(href="/styleguide.html") sg type & colors
+            +scrollTo("/#about", "About", "header__menu-item-link")
+
           li.header__menu-item
-            a.header__menu-item-link(href="/components.html") components
+            +scrollTo("/#services", "Services", "header__menu-item-link")
+
+          li.header__menu-item
+            a.header__menu-item-link(href="/interior.html") Testimonials
+
+          li.header__menu-item
+            a.header__menu-item-link(href="/interior.html") Photos & Videos
+
+          li.header__menu-item
+            a.header__menu-item-link(href="/interior.html") Plans
+
+          li.header__menu-item
+            a.header__menu-item-link(href="/interior.html") Bees
+
+          li.header__menu-item
+            a.header__menu-item-link(href="/interior.html") Toby Tobin

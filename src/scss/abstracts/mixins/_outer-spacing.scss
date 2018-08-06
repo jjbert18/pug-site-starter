@@ -14,14 +14,23 @@
 
 @mixin outer-spacing (
   $property: padding,
+  $container: false,
   $breakpoint: $bp-md
   ) {
 
   #{$property}-left: $spacing-horizontal-sm;
   #{$property}-right: $spacing-horizontal-sm;
 
-  @include bp-min($breakpoint) {
-    #{$property}-left: $spacing-horizontal-md;
-    #{$property}-right: $spacing-horizontal-md;
+  @if $container == true {
+    @include bp-min($bp-lg) {
+      margin: 0 auto;
+      max-width: 80vw;
+    }
+  } @else {
+    @include bp-min($breakpoint) {
+      #{$property}-left: $spacing-horizontal-md;
+      #{$property}-right: $spacing-horizontal-md;
+    }
   }
 }
+

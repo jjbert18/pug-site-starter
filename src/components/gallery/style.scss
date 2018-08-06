@@ -1,0 +1,57 @@
+@charset 'UTF-8';
+@import "../../scss/abstracts/imports";
+
+// -----------------------------------------------------------------------------
+// Component: Gallery
+// -----------------------------------------------------------------------------
+
+.gallery {
+  @include outer-spacing($container: true);
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+
+  .gallery__main {
+    .slick-slide {
+      margin: 0.5rem;
+      outline: 0 none;
+
+      label {
+        display: none;
+      }
+    }
+
+    .slick-current label {
+      display: block;
+      margin: 0.5rem auto;
+      max-width: 50%;
+      text-align: center;
+    }
+
+    .slick-dots li button:before {
+      font-size: 1rem;
+    }
+
+    .slick-arrow {
+      z-index: 1;
+    }
+
+    .slick-arrow.slick-prev {
+      left: 1rem;
+
+      &:before {
+        content: '\f053';
+        font-family: FontAwesome;
+      }
+    }
+
+    .slick-arrow.slick-next {
+      right: 1rem;
+
+      &:before {
+        content: '\f054';
+        font-family: FontAwesome;
+      }
+    }
+  }
+}

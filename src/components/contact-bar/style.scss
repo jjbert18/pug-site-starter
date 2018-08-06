@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+@import "../../scss/abstracts/imports";
+
+// -----------------------------------------------------------------------------
+// Component: Contact Bar
+// -----------------------------------------------------------------------------
+
+.contact-bar {
+  background-color: $color-mercury;
+  padding-top: $vertical-rhythm-sm;
+  padding-bottom: $vertical-rhythm-sm;
+
+  .contact-bar__content {
+    @include outer-spacing($container: true);
+    align-items: center;
+    display: flex;
+  }
+
+  h4 {
+    color: $color-kelp;
+    margin-right: 5%;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    li {
+      margin: 2.5% 5% 2.5% 0 ;
+    }
+  }
+}

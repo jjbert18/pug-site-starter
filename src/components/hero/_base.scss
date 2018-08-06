@@ -1,0 +1,63 @@
+// -----------------------------------------------------------------------------
+// Component: Hero - Base
+// -----------------------------------------------------------------------------
+
+.hero {
+  align-items: center;
+  background-color: $color-kelp;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $color-white;
+  display: flex;
+  justify-content: center;
+  min-height: 75vh;
+  position: relative;
+
+  &:before {
+    @include trbl();
+    background: linear-gradient(to top, $bg-hero-grad);
+    content: '';
+    pointer-events: none;
+  }
+}
+
+.hero__content {
+  max-width: 80vw;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+
+  .hero__text-title {
+    @include type-h1();
+    border-bottom: 0.125rem solid $color-white;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__text-subtitle {
+    @include type-h4();
+  }
+
+  .hero__text-description {
+    max-width: 50%;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__text-block {
+    @include type-p-minus();
+
+    p {
+      @include type-p-minus();
+    }
+
+    ul {
+      @include type-p-minus();
+      font-family: $font-primary;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+//- === Component: Sidebar === -//
+//- Vars: image, imageAlt
+
+//- Stylesheet:
+block append stylesheets
+  link(rel="stylesheet" href="./../components/sidebar/style.css")
+
+//- Mixin:
+mixin sidebar(image, imageAlt)
+  aside.sidebar
+    //- === Component: Image === -//
+    include ../image/_template.pug
+    +image(image, imageAlt)
+
+    if block
+      block
+
+    .sidebar__info
+      //- === Include: Contact Links === -//
+      include ../../includes/contact-links/_template.pug
+
+

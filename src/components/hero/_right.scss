@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// Component: Hero - Right aligned
+// -----------------------------------------------------------------------------
+
+.hero.hero--right {
+  justify-content: flex-end;
+  text-align: right;
+
+  &:before {
+    background: linear-gradient(to left, $bg-hero-grad);
+  }
+
+  .hero__content {
+    @include bp-min($bp-md) {
+      padding-right: calc(10vw + 1rem);
+    }
+  }
+
+  .hero__text {
+    align-items: flex-end;
+  }
+
+  //@include bp-max($bp-md) {
+  //  background: linear-gradient(to left, $bg-hero-grad);
+  //  background-position: left;
+  //}
+
+  //.hero__content {
+  //  display: flex;
+  //  flex-direction: row-reverse;
+  //
+  //  @include bp-max($bp-md) {
+  //    display: block;
+  //  }
+  //}
+}

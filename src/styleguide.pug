@@ -1,12 +1,16 @@
 extends structure/_layout
 
-block vars
-  title Styleguide
+//- ====== Block: Vars ====== -//
+//- Code that goes in the <head> tag
+  block vars
 
-block body
-  body.page__styleguide
+  //- === Structure: SEO meta tags === -//
+  include structure/_meta.pug
+  +meta('Styleguide', 'All site common styles', 'key, word')
 
-block content
+//- ====== Block: Content ====== -//
+//- All content between the header and footer
+  block content
   // typography
   section.styleguide
     .container

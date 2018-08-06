@@ -23,7 +23,7 @@ $base-font-size: 16;
 
 // === h1 === //
 $type-h1-family: $font-primary;
-$type-h1-letter: normal;
+$type-h1-letter: 0.1em;
 $type-h1-line: 1.25;
 $type-h1-max: 54;
 $type-h1-min: 46;
@@ -89,7 +89,7 @@ $type-p-plus-weight: normal;
 // === paragraph === //
 $type-p-family: $font-primary;
 $type-p-letter: normal;
-$type-p-line: 1.67;
+$type-p-line: 1.85;
 $type-p-max: 16;
 $type-p-min: 14;
 $type-p-max-fl: px-to-rem($type-p-max, true);

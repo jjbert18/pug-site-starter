@@ -1,37 +1,46 @@
 doctype html
 html(lang="en")
-- var baseTitle = "Pug"
+  - var baseTitle = "Richard Clayton Barrett"
+  - var pageClass = "page"
 
-head
-  meta(charset="utf-8")
-  block vars
-    title #{baseTitle}
-  meta(name="description" content="Pug")
-  meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
 
-  //- css reset
-  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css")
+    //- ====== Block: Vars ====== -//
+    //- Code that goes in the <head> tag
+    block vars
 
-  //- fonts
-  link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800")
-  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+      //- === Structure: SEO meta tags === -//
+      include ../structure/_meta.pug
+      +meta(baseTitle, pageClass, 'key, word')
 
-  //- vendor
+    //- css reset
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css")
 
-  //- compiled styles
-  link(rel="stylesheet" href="./../styles.css")
+    //- fonts
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous")
 
-  //- favicon
-  link(rel="shortcut icon" href="/favicon.png" type="image/png")
+    //- vendor
 
-  block body
+    //- favicon
+    link(rel="shortcut icon" href="/favicon.png" type="image/png")
 
-  // Header
-  include ../regions/header/_template.pug
+    //- compiled styles
+    link(rel="stylesheet" href="./../styles.css")
 
-  // Content - block content
-  main.main-content
-    block content
+    //- ====== Block: Stylesheets ====== -//
+    //- Component styles
+    block stylesheets
 
-  // Footer
-  include ../regions/footer/_template.pug
+  body(class=pageClass)
+    //- Header
+    include ../regions/header/_template.pug
+
+    //- Content - block content
+    main.main-content
+      block content
+
+    //- Footer
+    include ../regions/footer/_template.pug

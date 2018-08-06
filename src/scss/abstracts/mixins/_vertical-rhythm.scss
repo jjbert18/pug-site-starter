@@ -1,0 +1,51 @@
+@charset 'UTF-8';
+
+// -----------------------------------------------------------------------------
+// Vertical rhythm
+//
+// @include vertical-rhythm();
+// Place on parent container
+//
+// Options:
+// • $property(value = margin or padding) - default = padding - changes property
+// • $reset(value = true or false) - default = false - reset the property back to initial
+// • $negative(value = true or false) - default = false - pulls content up the rhythm amount
+//
+// -----------------------------------------------------------------------------
+
+@mixin vertical-rhythm(
+  $property: padding,
+  $reset: false,
+  $negative: false) {
+
+  // base
+  #{$property}-top: $vertical-rhythm-sm;
+
+  @include bp-min($bp-md) {
+    #{$property}-top: $vertical-rhythm-md;
+  }
+
+  // reset
+  @if $reset == true {
+    #{$property}-top: inherit;
+    #{$property}-top: initial;
+
+    @include bp-min($bp-md) {
+      #{$property}-top: inherit;
+      #{$property}-top: initial;
+    }
+  }
+
+  // negative
+  @if $negative == true {
+    margin-top: -$vertical-rhythm-md;
+    #{$property}-top: inherit;
+    #{$property}-top: initial;
+
+    @include bp-min($bp-md) {
+      margin-top: -$vertical-rhythm-lg;
+      #{$property}-top: inherit;
+      #{$property}-top: initial;
+    }
+  }
+}

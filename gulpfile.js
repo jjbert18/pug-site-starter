@@ -26,7 +26,7 @@ var version_date = new Date();
 version_date = version_date.toISOString().substring(0, 10);
 
 paths.styles = {
-  entry: paths.before + '/styles.scss',
+  entry: paths.before + ['/**/*.scss'],
   before: paths.before + '/**/*.scss',
   after: paths.after
 };
@@ -101,7 +101,7 @@ gulp.task('serve', ['styles', 'scripts', 'views'], function() {
     gulp.watch(paths.scripts.before, ['scripts']);
     gulp.watch([
       paths.scripts.after + '/global.js',
-      paths.styles.after + '/styles.css',
+      paths.styles.after + '/*.css',
       paths.views.after + '/*.html'
     ]).on('change', browserSync.reload);
 });

@@ -1,0 +1,16 @@
+//- === Component: Callout Peas === -//
+//- Vars: image, title, textParagraph1, textParagraph2
+
+//- Stylesheet:
+block append stylesheets
+  link(rel="stylesheet" href="./../components/peas/callout/style.css")
+
+//- Mixin:
+mixin peaCallout(image, title, textParagraph1, textParagraph2)
+  article.pea-callout
+    .pea-callout__content
+      h4= title
+      p= textParagraph1
+      if textParagraph2
+        p= textParagraph2
+    .pea-callout__image(style="background-image: url(" + image + ")")

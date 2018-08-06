@@ -1,0 +1,15 @@
+//- === Component: Image === -//
+//- Vars: image, imageAlt, caption, span
+
+//- Mixin:
+mixin image(image, imageAlt, caption, span)
+  if span
+    span.image
+      img(src=image alt=imageAlt)
+      if caption
+        label=imageAlt
+  else
+    .image
+      img(src=image alt=imageAlt)
+      if caption
+        label=imageAlt

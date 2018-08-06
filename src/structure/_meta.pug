@@ -1,0 +1,12 @@
+//- === Structure: SEO meta tags === -//
+//- Vars: title, description, keywords
+
+mixin meta(title, description, keywords)
+  //- Title = page title
+  title= title
+
+  //- Description = a short description of the page in the content attribute
+  meta(name="description" content=description)
+
+  //- Keywords - a comma seperated list of words related to the page in the content attribute
+  meta(name="keywords" content=keywords)

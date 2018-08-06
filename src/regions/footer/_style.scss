@@ -1,10 +1,13 @@
 .footer {
   @include outer-spacing();
+  @include vertical-rhythm($property: margin);
   align-items: center;
   background-color: $color-footer-bg;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: $vertical-rhythm-sm;
+  padding-top: $vertical-rhythm-sm;
 
   @include bp-min($bp-md) {
     flex-direction: row;
@@ -53,7 +56,7 @@
       }
     }
 
-    .fa {
+    i {
       color: $color-off-white;
       font-size: 2.25rem;
       transition: $transition-base;
