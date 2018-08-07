@@ -1,0 +1,27 @@
+extends ./structure/_layout.pug
+
+//- === Mixin Template Includes === -//
+//- Include the templates for the mixins below
+include ./structure/_meta.pug
+
+//- ====== Block: Vars ====== -//
+//- Code that goes in the <head> tag
+block vars
+
+  //- === Structure: SEO meta tags === -//
+  +meta(
+    "404",
+    "404 error page",
+    "key, word"
+  )
+
+//- ====== Block: Content ====== -//
+//- All content between the header and footer
+block content
+  article.interior
+
+    header.interior__header
+      h2.interior__header-title 404
+
+    .interior__content
+      p We are sorry. The page you were looking for could not be found. If you entered a web address please check if it was correct.

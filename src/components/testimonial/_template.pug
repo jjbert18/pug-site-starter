@@ -1,0 +1,15 @@
+//- === Component: Pod === -//
+//- Vars: title, text, caption, speaker
+
+//- Stylesheet:
+block append stylesheets
+  link(rel="stylesheet" href="./../components/testimonial/style.css")
+
+//- Mixin:
+mixin testimonial(title, text, caption, speaker)
+  article.testimonial
+    h4.testimonial__title= title
+    p.testimonial__text= text
+    p.testimonial__speaker
+      span.testimonial__speaker-caption= caption
+      span.testimonial__speaker-name= speaker

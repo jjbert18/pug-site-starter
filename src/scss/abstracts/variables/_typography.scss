@@ -88,7 +88,7 @@ $type-p-plus-weight: normal;
 
 // === paragraph === //
 $type-p-family: $font-primary;
-$type-p-letter: normal;
+$type-p-letter: 0.025em;
 $type-p-line: 1.85;
 $type-p-max: 16;
 $type-p-min: 14;
@@ -101,7 +101,7 @@ $type-p-weight: normal;
 
 // === paragraph minus === //
 $type-p-minus-family: $font-primary;
-$type-p-minus-letter: normal;
+$type-p-minus-letter: 0.05em;
 $type-p-minus-line: 1.67;
 $type-p-minus-max: 14;
 $type-p-minus-min: 12;

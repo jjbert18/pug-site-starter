@@ -4,11 +4,11 @@ include ../../components/scroll-link/_template.pug
 header.header
   .header__content
     .header__logo
-      a(href="/")
-        // img(src="../../images/RCB-weblogo.png")
+      a(href="/" aria-label="Homepage")
+        img(src="../../images/RCB-weblogo.png" alt="Richard Clayton Barrett Landscape Architect")
 
     .header__nav
-      button.mobile-menu__icon.js-mobile-menu__icon
+      button.mobile-menu__icon.js-mobile-menu__icon(aria-label="mobile menu toggle")
         .mobile-menu__icon-bars
           span
           span
@@ -23,16 +23,25 @@ header.header
             +scrollTo("/#services", "Services", "header__menu-item-link")
 
           li.header__menu-item
-            a.header__menu-item-link(href="/interior.html") Testimonials
+            a.header__menu-item-link(href="/testimonials.html" aria-label="Testimonials")
+              | Testimonials
 
           li.header__menu-item
-            a.header__menu-item-link(href="/interior.html") Photos & Videos
+            a.header__menu-item-link(href="/photos-and-videos.html" aria-label="Photos & Videos")
+              | Photos & Videos
 
           li.header__menu-item
-            a.header__menu-item-link(href="/interior.html") Plans
+            a.header__menu-item-link(href="/plans.html" aria-label="Plans")
+              | Plans
 
           li.header__menu-item
-            a.header__menu-item-link(href="/interior.html") Bees
+            a.header__menu-item-link(href="/interior.html" aria-label="Bees")
+              | Bees
 
           li.header__menu-item
-            a.header__menu-item-link(href="/interior.html") Toby Tobin
+            a.header__menu-item-link(href="/toby-tobin.html" aria-label="Toby Tobin")
+              | Toby Tobin
+
+          li.header__menu-item.header__menu-item--highlight
+            a.header__menu-item-link(href="/contact.html" aria-label="Contact")
+              | Contact

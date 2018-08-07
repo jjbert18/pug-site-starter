@@ -1,25 +1,28 @@
+//- === Mixin Template Includes === -//
+//- Include the templates for the mixins below
+include ./../../components/buttons/_template.pug
+
 footer.footer
   .footer__logo
     a(href="/")
-      img(src="../../images/RCB-weblogo.png")
+      img(src="../../images/RCB-weblogo.png" alt="Richard Clayton Barrett Landscape Architect")
+
+  .footer__content
+    p Rick will contact you asap to schedule a consultation to get to know your desires, tastes, and style.
+
+    +button(
+      "secondary",
+      "/contact",
+      "Contact today",
+      "btn--block"
+    )
 
   .footer__socials
-    ul
-      li
-        a(href="email")
-          i.far.fa-envelope
-      li
-        a(href="phone")
-          i.fas.fa-mobile
-      li
-        a(href="https://www.angieslist.com")
-          i.fas.fa-list-ul
-      li
-        a(href="https://houzz.com")
-          i.fab.fa-houzz
-      li
-        a(href="https://www.linkedin.com/company")
-          i.fab.fa-linkedin-in
+    //- === Include: Contact Links === -//
+    include ../../includes/contact-links/_template.pug
+
+  .footer__copyright
+    p &copy; Richard Clayton Barrett <span id="spanYear" class="js-year"> </span>
 
 //- global scripts import
 include ../../structure/_scripts

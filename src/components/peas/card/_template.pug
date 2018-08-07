@@ -12,10 +12,10 @@ mixin peaCard(image, title, linkUrl, linkText, text)
       .pea-card__content
         h4= title
         p= text
-        a(href=linkUrl)= linkText
+        a(href=linkUrl aria-label=linkText)= linkText
   else
     article.pea-card
       .pea-card__content
         h4= title
         p= text
-        a(href=linkUrl)= linkText
+        a(href=linkUrl aria-label=linkText)= linkText

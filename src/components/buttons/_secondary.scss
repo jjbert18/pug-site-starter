@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// Component: Hero - Secondary
+// -----------------------------------------------------------------------------
+
+.btn--secondary {
+  border: 2px solid $color-avocado;
+  background-color: transparent;
+  color: $color-sprout;
+  text-align: center;
+
+  &:hover,
+  &:active {
+    background-color: $color-sprout;
+    border-color: $color-sprout;
+    color: $color-white;
+  }
+}

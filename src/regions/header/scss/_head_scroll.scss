@@ -1,10 +1,15 @@
 // Header styles when site is scrolled
 
 .header {
+
+  &.jsa-temp-show:not(.jsa-visible) {
+    background-color: $color-header-bg-full;
+  }
+
   &.jsa-visible {
-    @include bp-min($bp-md) {
-      padding-top: 1rem;
-    }
+    //@include bp-min($bp-mobile-menu) {
+    //  padding-top: 1rem;
+    //}
 
     &:after {
       opacity: 1;

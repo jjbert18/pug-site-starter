@@ -7,9 +7,15 @@
 
 .gallery {
   @include outer-spacing($container: true);
+  margin-left: $spacing-horizontal-sm;
+  margin-right: $spacing-horizontal-sm;
   padding-left: 0;
   padding-right: 0;
   position: relative;
+
+  @include bp-min($bp-md) {
+    margin: 0;
+  }
 
   .gallery__main {
     .slick-slide {

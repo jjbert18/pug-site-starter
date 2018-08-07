@@ -1,0 +1,56 @@
+extends ./structure/_layout.pug
+
+//- === Mixin Template Includes === -//
+//- Include the templates for the mixins below
+include ./structure/_meta.pug
+include ./components/testimonial/_template.pug
+include ./components/sidebar/_template.pug
+
+//- ====== Block: Vars ====== -//
+//- Code that goes in the <head> tag
+block vars
+
+  //- === Structure: SEO meta tags === -//
+  +meta(
+    "Testimonials",
+    "What our clients are saying",
+    "key, word"
+  )
+
+//- ====== Block: Content ====== -//
+//- All content between the header and footer
+block content
+  article.interior
+
+    header.interior__header
+      h2.interior__header-title Testimonials
+
+    .interior__content
+      h3.interior__subtitle What our clients are saying
+
+      +testimonial(
+        "The only person I would ever trust with my own home",
+        "\"Rick is the only person I would ever trust with my own home. His integrity, values, quality of work and knowledge are second to none. As a guest and expert on my radio show for the past ten years I have come to know Rick as one of the best people in the business and would recommend him to anyone!\"",
+        "Host of Toby Tobin Radio show, Home, Lawn, Garden Expert",
+        "Toby Tobin"
+      )
+
+      +testimonial(
+        "Exceeded our expectations",
+        "\"Sometimes you don’t know how good somebody really is until you’ve had work done on your home that was really bad! I spend big bucks to have some work done by a company that turned out to be untrustworthy. Rick has exceeded our expectations and made our home beautiful. We trust him implicitly!\"",
+        "Homeowner. The National Golf Club of Kansas City",
+        "Jack Baker"
+      )
+
+      +testimonial(
+        "His work is heads and tails above others in our area",
+        "\"We’ve been in Kansas City since 1951 and the reason we have stayed in business so long is being a quality company and working with quality people like Rick. I know that when our customers are working with Rick – we’re not going to hear a complaint. His work is heads and tails above others in our area!\"",
+        "Soil Service Garden Center",
+        "Brian Lynch"
+      )
+
+    //- === Component: Sidebar === -//
+    +sidebar(
+      "https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1",
+      "Image alt text"
+    )

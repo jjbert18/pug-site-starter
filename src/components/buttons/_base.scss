@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// Component: Buttons - Base
+// -----------------------------------------------------------------------------
+
+.btn {
+  @include type-p-plus();
+  align-items: center;
+  display: flex;
+  flex: 1 1 40%;
+  font-family: $font-secondary;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.75em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: $transition-base;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn--block {
+  display: block;
+  margin-top: 1rem;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.btn--inline {
+  display: inline-block;
+}

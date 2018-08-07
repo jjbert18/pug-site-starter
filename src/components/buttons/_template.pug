@@ -1,0 +1,11 @@
+//- === Component: Hero === -//
+//- Vars: textPosition, bg_image, title, subtitle, description, buttonUrl, buttonText
+
+//- Stylesheet:
+block append stylesheets
+  link(rel="stylesheet" href="./../components/buttons/style.css")
+
+//- Mixin:
+mixin button(btnClass, linkUrl, linkText, extraClass)
+  a(class="btn btn--" + btnClass + " " + extraClass href= linkUrl target="_blank" aria-label=linkText)= linkText
+

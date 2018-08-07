@@ -2,9 +2,9 @@
 //- Vars: linkUrl, linkText, linkClass
 
 mixin scrollTo(linkUrl, linkText, linkClass)
-  a(data-scroll class=linkClass href=linkUrl)= linkText
+  a(data-scroll class=linkClass aria-label=linkText href=linkUrl)= linkText
 
 //- === Component: Scroll her === -//
 //- Vars: linkId
-mixin scrollHere(linkId)
-  a(id=linkId href="")
+mixin scrollHere(linkId, linkText)
+  a(id=linkId href="" aria-label="linkText")

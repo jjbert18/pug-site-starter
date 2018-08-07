@@ -10,7 +10,7 @@ mixin hero(textPosition, bg_image, title, subtitle, description, buttonUrl, butt
   section.hero(style="background-image: url(" + bg_image + ")" class="hero--" + textPosition )
     .hero__content
       .hero__text
-        //if image
+        if image
           include ../image/_template.pug
           +image(image, imageAlt)
 
@@ -30,8 +30,13 @@ mixin hero(textPosition, bg_image, title, subtitle, description, buttonUrl, butt
           p.hero__text-description= description
 
         if buttonUrl
-          .hero__text-button
-            a.btn.btn--primary(href= buttonUrl)= buttonText
+          include ../buttons/_template.pug
+          +button(
+            "primary",
+            buttonUrl,
+            buttonText,
+            ""
+          )
 
         if block
           .hero__text-block

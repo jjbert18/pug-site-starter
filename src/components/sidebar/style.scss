@@ -19,8 +19,28 @@
   .sidebar__info {
     padding: 1.5rem 1.5rem 3rem;
 
-    .contact-links li {
-      margin-top: 1rem;
+    .contact-links {
+      li {
+        margin-top: 1rem;
+      }
+
+      a {
+        align-items: center;
+        display: flex;
+
+        &:hover {
+          color: $color-sprout;
+          text-decoration: none;
+        }
+
+        i + span {
+          margin-left: 0.5em;
+        }
+
+        i {
+          flex-basis: 10%;
+        }
+      }
     }
   }
 }

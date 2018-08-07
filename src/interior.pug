@@ -1,27 +1,31 @@
 extends ./structure/_layout.pug
 
+//- === Mixin Template Includes === -//
+//- Include the templates for the mixins below
+include ./structure/_meta.pug
+include ./components/image/_template.pug
+include ./components/pod/_template.pug
+include ./components/peas/base/_template.pug
+include ./components/sidebar/_template.pug
+
 //- ====== Block: Vars ====== -//
 //- Code that goes in the <head> tag
 block vars
 
   //- === Structure: SEO meta tags === -//
-  include structure/_meta.pug
-  +meta('Interior', 'Interior page content example', 'key, word')
-
-//- === Mixin Template Includes === -//
-//- Include the templates for the mixins below
-include ./components/image/_template.pug
-include ./components/pod/_template.pug
-include ./components/peas/base/_template.pug
-include ./components/sidebar/_template.pug
+  +meta(
+    "Interior",
+    "Interior page content example",
+    "key, word"
+  )
 
 //- ====== Block: Content ====== -//
 //- All content between the header and footer
 block content
   article.interior
 
-    header
-      h2.interior__title This is a page title
+    header.interior__header
+      h2.interior__header-title This is a page title
 
     .interior__content
       h3.interior__subtitle This is a subtitle that can be long or short or not at all
@@ -40,7 +44,11 @@ block content
       p Nulla pretium risus sit amet convallis sollicitudin. Sed laoreet ullamcorper bibendum. In iaculis iaculis tellus. Nulla imperdiet lectus a consequat pharetra. Etiam eleifend blandit dolor, eget congue elit pharetra nec. Nunc cursus pellentesque dolor sed tincidunt. Pellentesque vitae posuere neque. Cras a sodales sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In id justo diam. Quisque iaculis, lectus id facilisis ornare, odio tortor lacinia ante, placerat eleifend nisl eros in ante.
 
       //- === Component: Image === -//
-      +image('https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1', 'Image alt text', 'true')
+      +image(
+        "https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1",
+        "Image alt text",
+        "true"
+      )
 
       p Nulla at eleifend purus. Duis ut orci eget urna vehicula pulvinar. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vulputate ipsum sed facilisis vestibulum. Donec pretium magna nec lobortis dictum. Mauris at placerat massa. Suspendisse vehicula lorem id pretium faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis molestie orci mauris, a vehicula turpis ullamcorper eu. Morbi viverra egestas libero, sed imperdiet enim sagittis scelerisque. Pellentesque fringilla quam sed eros vestibulum efficitur.
 
@@ -49,16 +57,49 @@ block content
         | Pellentesque viverra nulla in vestibulum dignissim. Nulla pretium risus sit amet convallis sollicitudin. Sed laoreet ullamcorper bibendum.
 
         //- === Component: Image === -//
-        +image('https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1', 'Image alt text', 'true', 'true')
+        +image(
+          "https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1",
+          "Image alt text",
+          "true",
+          "true")
 
         | Maecenas eget velit vitae sapien elementum volutpat. Donec eget eros sed arcu lacinia blandit sed in arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec quis ex vel diam pellentesque facilisis eu vitae nibh. Vestibulum ut pharetra enim. Quisque cursus tellus vel ipsum congue, et rhoncus velit imperdiet. Curabitur a nisi non tellus placerat dictum. Nullam tristique commodo lorem id rhoncus. Fusce quis luctus enim, et pharetra nunc. Donec id nibh tincidunt, mollis sem nec, dapibus nisi. Proin vel justo vitae felis iaculis lobortis. Morbi maximus odio et maximus mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae nisi elit.
 
 
+
       //- === Component: Base Peas === -//
-      +pod('base', '', '', '', 'Example component embed', '')
-        +pea('title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at hendrerit neque. Pellentesque sodales dui ut tortor lacinia, vel dignissim nisl accumsan. Donec sagittis tempus mi, ac pharetra sapien volutpat et.')
-        +pea('title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at hendrerit neque. Pellentesque sodales dui ut tortor lacinia, vel dignissim nisl accumsan. Donec sagittis tempus mi, ac pharetra sapien volutpat et.')
-        +pea('title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at hendrerit neque. Pellentesque sodales dui ut tortor lacinia, vel dignissim nisl accumsan. Donec sagittis tempus mi, ac pharetra sapien volutpat et.')
+      +pod(
+        "base",
+        "",
+        "",
+        "",
+        "Example component embed",
+        ""
+      )
+
+        +pea(
+          "title",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at hendrerit neque. Pellentesque sodales dui ut tortor lacinia, vel dignissim nisl accumsan. Donec sagittis tempus mi, ac pharetra sapien volutpat et."
+        )
+
+
+        +pea(
+          "title",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at hendrerit neque. Pellentesque sodales dui ut tortor lacinia, vel dignissim nisl accumsan. Donec sagittis tempus mi, ac pharetra sapien volutpat et."
+        )
+
+
+
+        +pea(
+          "title",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at hendrerit neque. Pellentesque sodales dui ut tortor lacinia, vel dignissim nisl accumsan. Donec sagittis tempus mi, ac pharetra sapien volutpat et."
+        )
+
+
+
 
     //- === Component: Sidebar === -//
-    +sidebar('https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1', 'Image alt text')
+    +sidebar(
+      "https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1",
+      "Image alt text"
+    )

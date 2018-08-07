@@ -2,8 +2,8 @@
 
 .header {
   .header__menu {
-    @include bp-max($bp-md - 1) {
-      background-color: $color-header-bg-full;
+    @include bp-max($bp-mobile-menu - 1) {
+      background-color: darken($color-kelp, 3%);
       left: 100%;
       position: absolute;
       right: 0;
@@ -25,41 +25,35 @@
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 1rem;
+    padding: 2rem 1rem 3rem;
 
-    @include bp-min($bp-md) {
+    @include bp-min($bp-mobile-menu) {
       align-items: center;
       flex-direction: row;
       justify-content: flex-end;
       padding: 0;
-    }
-
-    @include bp($bp-md) {
-      align-items: center;
+      height: 100%;
     }
   }
 
   .header__menu-item {
     list-style: none;
+    margin-bottom: 2rem;
+    text-align: center;
 
-    @include bp-max($bp-md) {
-      margin-bottom: 2rem;
+    @include bp-min($bp-mobile-menu) {
+      margin-bottom: 0;
+      margin-right: 3rem;
+    }
 
-      &:last-of-type {
+    &:last-of-type {
+      @include bp-max($bp-mobile-menu - 1) {
         margin-bottom: 0
       }
-    }
 
-    @include bp-min($bp-md) {
-      margin-right: 3rem;
-
-      &:last-of-type {
+      @include bp-min($bp-mobile-menu) {
         margin-right: 0;
       }
-    }
-
-    @include bp($bp-md) {
-      margin-bottom: 0;
     }
 
     .header__menu-item-link {
@@ -77,13 +71,28 @@
         text-shadow: 0 3px 5px rgba($color-black, 0.25);
       }
 
-      @include bp-min($bp-lg) {
+      @include bp-min($bp-mobile-menu) {
         font-size: 1rem;
       }
 
       &:hover {
         color: $color-sprout;
       }
+    }
+  }
+
+  .header__menu-item--highlight {
+    background-color: $color-sprout;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    text-align: center;
+    justify-content: center;
+
+    .header__menu-item-link:hover {
+      color: $color-white;
+      text-decoration: underline;
     }
   }
 }

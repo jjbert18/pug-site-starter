@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// Component: Hero - Primary
+// -----------------------------------------------------------------------------
+
+.btn--primary {
+  background-color: $color-sprout;
+  color: $color-white;
+  transition: $transition-base;
+  transform-origin: center;
+
+  &:active,
+  &:visited {
+    color: $color-white;
+  }
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}

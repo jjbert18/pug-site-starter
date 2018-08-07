@@ -48,6 +48,10 @@ body {
   }
 }
 
+.spacer {
+  margin-bottom: $vertical-rhythm-xsm;
+}
+
 main {
   margin-top: calc(#{$header-height} + #{$spacing-vertical-sm});
 }

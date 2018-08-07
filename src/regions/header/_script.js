@@ -27,6 +27,7 @@
     $($menuMobileBtn).click(function () {
       $(this).toggleClass($showClass);
       $($menuMain).toggleClass($showClass);
+      $('.header').toggleClass('jsa-temp-show');
       $('body').toggleClass('jsa-body-lock');
     });
   }

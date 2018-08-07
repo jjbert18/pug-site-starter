@@ -1,0 +1,32 @@
+@charset 'UTF-8';
+@import "../../scss/abstracts/imports";
+
+// -----------------------------------------------------------------------------
+// Component: Testimonial
+// -----------------------------------------------------------------------------
+
+.testimonial {
+  background-color: $color-mercury;
+  margin-top: $vertical-rhythm-xsm;
+  padding: 2rem;
+
+  .testimonial__title {
+    color: rgba($color-avocado, 1);
+  }
+
+  .testimonial__speaker {
+    .testimonial__speaker-caption,
+    .testimonial__speaker-name {
+      display: block;
+      text-align: right;
+    }
+
+    .testimonial__speaker-caption {
+      @include type-p-minus();
+    }
+
+    .testimonial__speaker-name {
+      @include type-p-plus();
+    }
+  }
+}

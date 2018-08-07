@@ -27,7 +27,11 @@
     width: 100%;
 
     li {
-      margin: 2.5% 5% 2.5% 0 ;
+      margin: 2.5% 5% 2.5% 0;
+    }
+
+    i {
+      display: none;
     }
   }
 }
