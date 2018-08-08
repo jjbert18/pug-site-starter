@@ -1,19 +1,8 @@
-@charset 'UTF-8';
-
 // -----------------------------------------------------------------------------
-// Color variables
+// Theme: Content specific color variables
 // -----------------------------------------------------------------------------
 
-// === Globals === //
-$color-white: #ffffff;
-$color-mercury: #e4e4e4;
-$color-black: #000000;
-$color-inchworm: #ade25d;
-$color-ming: #3b7080;
-$color-gray-asparagus: #3a5743;
-
-// === Content Specific === //
-
+// === Base === //
 // Copy text color
 $color-text: $color-black;
 
@@ -23,61 +12,37 @@ $color-brand: $color-inchworm;
 // Background color
 $color-background: $color-white;
 
-// = Header = //
-// background color
+// === Header === //
 $color-header-bg-full: rgba($color-ming, 0.95);
 $color-header-bg-trans: rgba($color-ming, 0.5);
-
-// nav links
 $color-header-nav-link: $color-white;
 
-// = Mobile menu toggle = //
+// === Mobile menu toggle ===  //
 $color-mobile-bars: $color-white;
 
-// = Footer = //
-// background color
+// === Footer === //
 $color-footer-bg: $color-ming;
-
-// text
 $color-footer-text: $color-white;
-
-// icons
 $color-footer-icons: $color-inchworm;
 $color-footer-icons-hover: $color-brand;
 
-// = Contact bar = //
+// === Contact bar === //
 $color-contact-bar-title: $color-ming;
 
-// = Buttons = //
-// background color
+// === Buttons === //
 $color-btn-bg: $color-brand;
 $color-btn-text: $color-white;
 
-// = Pea Card = //
-// background colors
+// === Pea Card === //
 $color-card-bg-1: $color-ming;
 $color-card-bg-2: $color-gray-asparagus;
 $color-card-bg-3: $color-inchworm;
-
-// text color
 $color-card-text: $color-white;
 
-// = Hero = //
+// === Hero  === //
 $color-hero-text: $color-white;
 
-// = Sidebar = //
+// === Sidebar === //
 $color-sidebar-bg: $color-mercury;
 $color-sidebar-icons: $color-ming;
 $color-sidebar-icons-hover: $color-brand;
-
-// === Color Map === //
-// Colors that will be used as classes in the color classes function
-// functions/_color-classes.scss
-$color-map: (
-  "white" $color-white,
-  "mercury" $color-mercury,
-  "black" $color-black,
-  "inchworm" $color-inchworm,
-  "ming" $color-ming,
-  "gray-asparagus" $color-gray-asparagus,
-);
