@@ -1,55 +1,346 @@
 extends structure/_layout
 
+//- Stylesheet:
+block append stylesheets
+  link(rel="stylesheet" href="./../components/contact-bar/style.css")
+
+//- === Mixin Template Includes === -//
+//- Include the templates for the mixins below
+include ./structure/_meta.pug
+include ./components/scroll-link/_template.pug
+include ./components/hero/_template.pug
+include ./components/pod/_template.pug
+include ./components/peas/callout/_template.pug
+include ./components/peas/base/_template.pug
+include ./components/peas/card/_template.pug
+include ./components/contact-bar/_template.pug
+include ./components/buttons/_template.pug
+include ./components/image/_template.pug
+include ./components/testimonial/_template.pug
+include ./components/sidebar/_template.pug
+
 //- ====== Block: Vars ====== -//
 //- Code that goes in the <head> tag
 block vars
-
   //- === Structure: SEO meta tags === -//
-  include structure/_meta.pug
-  +meta('Styleguide', 'All site common styles', 'key, word')
+  +meta(
+    "Styleguide",
+    "Styleguide page component examples"
+  )
+
+  meta(name="robots" content="noindex, nofollow")
+
 
 //- ====== Block: Content ====== -//
 //- All content between the header and footer
 block content
-  // typography
+
+  +scrollHere("top")
+
+  // === SG Nav === //
   section.styleguide
-    .container
-      h2 Typography
+    ul
+      li
+        +scrollTo("#typography", "Typography")
+      li
+        +scrollTo("#colors", "Colors")
+      li
+        +scrollTo("#buttons", "Buttons")
+      li
+        +scrollTo("#image", "Image")
+      li
+        +scrollTo("#hero", "Hero")
+      li
+        +scrollTo("#pod-4-base-peas", "Pod 4 base peas")
+      li
+        +scrollTo("#pod-3-base-peas", "Pod 3 base peas")
+      li
+        +scrollTo("#pod-2-base-peas", "Pod 2 base peas")
+      li
+        +scrollTo("#pod-2-callout-peas", "Pod 2 callout peas")
+      li
+        +scrollTo("#pod-grid-peas", "Pod grid peas")
+      li
+        +scrollTo("#contact-bar", "Contact Bar")
+      li
+        +scrollTo("#testimonial", "Testimonial")
+      li
+        +scrollTo("#sidebar", "sidebar")
 
-      h1 h1 Heading One
-      h2 h2 Heading Two
-      h3 h3 Heading Three
-      h4 h4 Heading Four
-      p.type-p-plus Pragraph Plus: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero ex, faucibus et commodo vitae, malesuada id velit. Maecenas non velit semper, pellentesque risus vitae, porttitor sem.
-      p Pragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero ex, faucibus et commodo vitae, malesuada id velit. Maecenas non velit semper, pellentesque risus vitae, porttitor sem.
-      p.type-p-minus Pragraph Minus: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero ex, faucibus et commodo vitae, malesuada id velit. Maecenas non velit semper, pellentesque risus vitae, porttitor sem.
+  // === Typography === //
+  +scrollHere("typography")
 
-  // colors
   section.styleguide
-    .container
-      h2 Colors
+    .sg-title
+      .sg-title-text Typography
 
-      ul.colors
-        li.colors__color
-          .colors__color-box.bg-acadia
-          label.colors__color-label Acadia #333831 <br> $color-acadia
+    h1 h1 Heading One
+    code
+      | h1 | @include type-h1();
 
-        li.colors__color
-          .colors__color-box.bg-kelp
-          label.colors__color-label Kelp #294629 <br> $color-kelp
+    h2 h2 Heading Two
+    code
+      | h2 | @include type-h2();
 
-        li.colors__color
-          .colors__color-box.bg-avocado
-          label.colors__color-label Avocado #487c48 <br> $color-avocado
+    h3 h3 Heading Three
+    code
+      | h3 | @include type-h3();
 
-        li.colors__color
-          .colors__color-box.bg-sprout
-          label.colors__color-label Sprout #80c784 <br> $color-sprout
+    h4 h4 Heading Four
+    code
+      | h4 | @include type-h4();
 
-        li.colors__color
-          .colors__color-box.bg-mercury
-          label.colors__color-label Mercury #e4e4e4 <br> $color-mercury
+    p.type-p-plus Pragraph Plus: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero ex, faucibus et commodo vitae, malesuada id velit. Maecenas non velit semper, pellentesque risus vitae, porttitor sem.
+    code
+      | p.type-p-plus | @include type-p-plus();
 
-        li.colors__color
-          .colors__color-box.bg-off-white
-          label.colors__color-label Off-white #fcfff3 <br> $color-off-white
+    p Pragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero ex, faucibus et commodo vitae, malesuada id velit. Maecenas non velit semper, pellentesque risus vitae, porttitor sem.
+    code
+      | p | @include type-p();
+
+    p.type-p-minus Pragraph Minus: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero ex, faucibus et commodo vitae, malesuada id velit. Maecenas non velit semper, pellentesque risus vitae, porttitor sem.
+    code
+      | p.type-p-minus | @include type-p-minus();
+
+  //- === Colors === -//
+  +scrollHere("colors")
+
+  section.styleguide
+    .sg-title
+      .sg-title-text Colors
+
+    ul.colors
+      li.colors__color
+        .colors__color-box.bg-acadia
+        label.colors__color-label Acadia #333831 <br> $color-acadia
+
+      li.colors__color
+        .colors__color-box.bg-kelp
+        label.colors__color-label Kelp #294629 <br> $color-kelp
+
+      li.colors__color
+        .colors__color-box.bg-avocado
+        label.colors__color-label Avocado #487c48 <br> $color-avocado
+
+      li.colors__color
+        .colors__color-box.bg-sprout
+        label.colors__color-label Sprout #80c784 <br> $color-sprout
+
+      li.colors__color
+        .colors__color-box.bg-mercury
+        label.colors__color-label Mercury #e4e4e4 <br> $color-mercury
+
+      li.colors__color
+        .colors__color-box.bg-off-white
+        label.colors__color-label Off-white #fcfff3 <br> $color-off-white
+
+  //- === Buttons === -//
+  +scrollHere("buttons")
+
+  section.styleguide
+    .sg-title
+      .sg-title-text Buttons
+      code
+        | Vars: btnClass, linkUrl, linkText, extraClass
+
+    +button("primary", "#", "Lorem ipsum", "btn--inline")
+    code
+      | +button("primary", "#", "Lorem ipsum", "btn--inline")
+
+    +button("primary", "#", "Lorem ipsum", "btn--block")
+    code
+      | +button("primary", "#", "Lorem ipsum", "btn--block")
+
+    .sg-spacer
+
+    +button("secondary", "#", "Lorem ipsum", "btn--inline")
+    code
+      | +button("secondary", "#", "Lorem ipsum", "btn--inline")
+
+    +button("secondary", "#", "Lorem ipsum", "btn--block")
+    code
+      | +button("secondary", "#", "Lorem ipsum", "btn--block")
+
+  //- === image === -//
+  +scrollHere("image")
+
+  section.styleguide
+    .sg-title
+      .sg-title-text Image
+      code
+        | Vars: image, imageAlt, caption, span
+
+    +image("https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1", "Image alt text", "true")
+    code
+      | +image("https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1", "Image alt text", "true")
+
+  //- === Hero === -//
+  +scrollHere("hero")
+
+  section.styleguide
+    .sg-title
+      .sg-title-text Hero
+      code
+        | Vars: textPosition, bg_image, title, subtitle, description, buttonUrl, buttonText, image, imageAlt
+
+  +hero("left", "../../images/house1.jpg", "title", "subtitle", "description", "button url", "button text", "../../images/RCB-weblogo.png", "image alt")
+  code
+    | +hero("left", "../../images/house1.jpg", "title", "subtitle", "description", "button url", "button text", "../../images/RCB-weblogo.png", "image alt")
+
+  +hero("left", "../../images/house1.jpg", "title", "subtitle", "description", "button url", "button text", "", "")
+  code
+    | +hero("left", "../../images/house1.jpg", "title", "subtitle", "description", "button url", "button text", "", "")
+
+  +hero("", "../../images/house1.jpg", "title", "subtitle", "description", "button url", "button text", "", "")
+  code
+    | +hero("", "../../images/house1.jpg", "title", "subtitle", "description", "button url", "button text", "", "")
+
+  +hero("right", "../../images/house1.jpg", "title", "subtitle", "description", "button url", "button text", "", "")
+  code
+    | +hero("right", "../../images/house1.jpg", "title", "subtitle", "description", "button url", "button text", "", "")
+
+  //- === Pod & 4 Base Peas === -//
+  +scrollHere("pod-4-base-peas")
+
+  section.styleguide
+    .sg-title
+      .sg-title-text Pod & 4 Base Peas
+      code
+        | Pod vars: podClass, podWrap, bgColor, textColor, title, sideText <br>
+        | Pea vars: title, text, linkUrl, linkText
+
+  +pod("base", "", "sprout", "off-white", "Nulla justo magna", "Etiam facilisis")
+    +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.")
+    +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.")
+    +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.")
+    +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.")
+
+  code
+    | +pod("base", "", "sprout", "off-white", "Nulla justo magna", "Etiam facilisis") <br>
+    | &nbsp;&nbsp; +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.") <br>
+    | &nbsp;&nbsp; +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.") <br>
+    | &nbsp;&nbsp; +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.") <br>
+    | &nbsp;&nbsp; +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.")
+
+  //- === Pod & 3 Base Peas === -//
+  +scrollHere("pod-3-base-peas")
+
+  section.styleguide
+    .sg-title
+      .sg-title-text Pod & 3 Base Peas
+      code
+        | Pod vars: podClass, podWrap, bgColor, textColor, title, sideText <br>
+        | Pea vars: title, text, linkUrl, linkText
+
+  +pod("base", "", "sprout", "off-white", "Nulla justo magna", "Etiam facilisis")
+    +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.")
+    +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.")
+    +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.")
+
+  code
+    | +pod("base", "", "sprout", "off-white", "Nulla justo magna", "Etiam facilisis") <br>
+    | &nbsp;&nbsp; +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.") <br>
+    | &nbsp;&nbsp; +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.") <br>
+    | &nbsp;&nbsp; +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.")
+
+  //- === Pod & 2 Base Peas === -//
+  +scrollHere("pod-2-base-peas")
+
+  section.styleguide
+    .sg-title
+      .sg-title-text Pod & 2 Base Peas
+      code
+        | Pod vars: podClass, podWrap, bgColor, textColor, title, sideText <br>
+        | Pea vars: title, text, linkUrl, linkText
+
+  +pod("base", "", "sprout", "off-white", "Nulla justo magna", "Etiam facilisis")
+    +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.")
+    +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.")
+
+  code
+    | +pod("base", "", "sprout", "off-white", "Nulla justo magna", "Etiam facilisis") <br>
+    | &nbsp;&nbsp; +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.") <br>
+    | &nbsp;&nbsp; +pea("Lorem ipsum", "Dolor sit amet, consectetur adipiscing elit.")
+
+  //- === Pod & 2 Callout Peas === -//
+  +scrollHere("pod-2-callout-peas")
+  section.styleguide
+    .sg-title
+      .sg-title-text Pod & 2 Callout Peas
+      code
+        | Pod vars: podClass, podWrap, bgColor, textColor, title, sideText <br>
+        | Pea vars: image, title, textParagraph1, textParagraph2
+
+  +pod("callout", "wrap")
+    +peaCallout("../../images/front-yard-meadow.jpg", "Lorem ipsum", "Dolor sit amet.", "Donec lobortis magna enim.")
+    +peaCallout("../../images/front-yard-meadow.jpg", "Lorem ipsum", "Dolor sit amet.", "Donec lobortis magna enim.")
+
+  code
+    | +pod("callout", "wrap") <br>
+    | &nbsp;&nbsp; +peaCallout("../../images/front-yard-meadow.jpg", "Lorem ipsum", "Dolor sit amet.", "Donec lobortis magna enim.") <br>
+    | &nbsp;&nbsp; +peaCallout("../../images/front-yard-meadow.jpg", "Lorem ipsum", "Dolor sit amet.", "Donec lobortis magna enim.")
+
+  //- === Pod & Grid Peas === -//
+  +scrollHere("pod-grid-peas")
+  section.styleguide
+    .sg-title
+      .sg-title-text Pod & Grid Peas
+      code
+        | Pod vars: podClass, podWrap, bgColor, textColor, title, sideText <br>
+        | Pea vars: image, title, textParagraph1, textParagraph2
+
+  +pod("card-grid", "wrap")
+    +peaCard("", "Lorem ipsum", "#", "Dolor sit amet", "Dolor sit amet, consectetur adipiscing elit")
+    +peaCard("", "Lorem ipsum", "#", "Dolor sit amet", "Dolor sit amet, consectetur adipiscing elit")
+    +peaCard("", "Lorem ipsum", "#", "Dolor sit amet", "Dolor sit amet, consectetur adipiscing elit")
+    +peaCard("", "Lorem ipsum", "#", "Dolor sit amet", "Dolor sit amet, consectetur adipiscing elit")
+    +peaCard("", "Lorem ipsum", "#", "Dolor sit amet", "Dolor sit amet, consectetur adipiscing elit")
+
+  code
+    | +pod("card-grid", "wrap") <br>
+    | &nbsp;&nbsp; +peaCard("", "Lorem ipsum", "#", "Dolor sit amet", "Dolor sit amet, consectetur adipiscing elit") <br>
+    | &nbsp;&nbsp; +peaCard("", "Lorem ipsum", "#", "Dolor sit amet", "Dolor sit amet, consectetur adipiscing elit") <br>
+    | &nbsp;&nbsp; +peaCard("", "Lorem ipsum", "#", "Dolor sit amet", "Dolor sit amet, consectetur adipiscing elit") <br>
+    | &nbsp;&nbsp; +peaCard("", "Lorem ipsum", "#", "Dolor sit amet", "Dolor sit amet, consectetur adipiscing elit") <br>
+    | &nbsp;&nbsp; +peaCard("", "Lorem ipsum", "#", "Dolor sit amet", "Dolor sit amet, consectetur adipiscing elit")
+
+  //- === Pod & Grid Peas === -//
+  +scrollHere("contact-bar")
+
+  section.styleguide
+    .sg-title
+      .sg-title-text Contact bar
+
+  +contactBar()
+  code
+    | +contactBar()
+
+  //- === Testimonial === -//
+  +scrollHere("testimonial")
+
+  section.styleguide
+    .sg-title
+      .sg-title-text Testimonial
+      code
+        | Vars: title, text, caption, speaker
+
+    +testimonial("Lorem ipsum dolor sit amet", "Mauris nulla libero, pellentesque eget leo eget.", "Etiam facilisis lectus vehicula", "Donec sed dictum")
+    code
+      | +testimonial("Lorem ipsum dolor sit amet", "Mauris nulla libero, pellentesque eget leo eget.", "Etiam facilisis lectus vehicula", "Donec sed dictum")
+
+  //- === Testimonial === -//
+  +scrollHere("sidebar")
+
+  section.styleguide
+    .sg-title
+      .sg-title-text Sidebar
+      code
+        | Vars: image, imageAlt
+
+    +sidebar("https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1", "Image alt text")
+    code
+      | +sidebar("https://images.unsplash.com/photo-1532926169706-d20b3ab66ff1", "Image alt text")
+
+
+  .sg-top-link
+    +scrollTo("#top", "Top")

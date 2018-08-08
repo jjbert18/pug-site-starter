@@ -52,7 +52,7 @@
   // === Menu Default === //
   // if page does not have hero, show background from start
   function menuDefault() {
-    if(!$('section').hasClass('hero')) {
+    if(!$('section:first-of-type').hasClass('hero')) {
       $('.header').addClass($showClass);
     } else {
       menuScroll();

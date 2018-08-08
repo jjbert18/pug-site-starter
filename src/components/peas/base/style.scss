@@ -12,6 +12,7 @@
 
   @include bp-min($bp-md) {
     flex: 1 1 50%;
+    max-width: 50%;
   }
 
   @include bp-min($bp-lg) {

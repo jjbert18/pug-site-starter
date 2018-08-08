@@ -33,6 +33,7 @@
     margin-bottom: $vertical-rhythm-sm;
 
     @include bp-min($bp-md) {
+      flex-basis: 75%;
       max-width: 75%;
       padding-right: 10%;
     }

@@ -18,10 +18,12 @@
   @include bp-min($bp-md) {
     flex-basis: 50%;
     margin-bottom: 0;
+    max-width: 50%;
   }
 
   @include bp-min($bp-lg) {
     flex-basis: 33.333%;
+    max-width: 33.333%;
   }
 
   &:nth-of-type(3n+1) {
@@ -39,6 +41,7 @@
   &:nth-of-type(4n) {
     @include bp-min($bp-lg) {
       flex-basis: 66.666%;
+      max-width: 66.666%;
     }
   }
 

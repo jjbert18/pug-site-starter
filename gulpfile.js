@@ -26,7 +26,7 @@ var version_date = new Date();
 version_date = version_date.toISOString().substring(0, 10);
 
 paths.styles = {
-  entry: paths.before + ['/**/*.scss'],
+  entry: paths.before + '/**/*.scss',
   before: paths.before + '/**/*.scss',
   after: paths.after
 };
@@ -42,19 +42,30 @@ paths.views = {
   after: paths.after
 };
 
+paths.files = {
+  entry: paths.before + '/**/*.txt',
+  before: [paths.before + '/**/.*', paths.before + '/**/*.txt'],
+  after: paths.after
+};
+
 paths.images = {
-    before: paths.before + '/images/**/*',
-    after: paths.after + '/images'
+  before: paths.before + '/images/**/*',
+  after: paths.after + '/images'
 };
 
 paths.server = paths.after;
 
 gulp.task('views', function() {
-
   return gulp.src(paths.views.before)
     .pipe(pug({
       pretty: true
     }))
+    .on('error', gutil.log)
+    .pipe(gulp.dest(paths.views.after));
+});
+
+gulp.task('files', function() {
+  return gulp.src(paths.files.before)
     .on('error', gutil.log)
     .pipe(gulp.dest(paths.views.after));
 });
@@ -80,33 +91,30 @@ gulp.task('styles', function() {
 });
 
 gulp.task('images', function() {
-
-    return gulp.src(paths.images.before)
-        .pipe(imagemin())
-        .pipe(gulp.dest(paths.images.after));
+  return gulp.src(paths.images.before)
+    .pipe(imagemin())
+    .pipe(gulp.dest(paths.images.after));
 });
 
 gulp.task('serve', ['styles', 'scripts', 'views'], function() {
+  browserSync.init({
+    server: {
+        baseDir: paths.server
+    }
+  });
 
-    browserSync.init({
-
-        server: {
-
-            baseDir: paths.server
-        }
-    });
-
-    gulp.watch(paths.styles.before, ['styles']);
-    gulp.watch(paths.views.before, ['views']);
-    gulp.watch(paths.scripts.before, ['scripts']);
-    gulp.watch([
-      paths.scripts.after + '/global.js',
-      paths.styles.after + '/*.css',
-      paths.views.after + '/*.html'
-    ]).on('change', browserSync.reload);
+  gulp.watch(paths.styles.before, ['styles']);
+  gulp.watch(paths.views.before, ['views']);
+  gulp.watch(paths.files.before, ['files']);
+  gulp.watch(paths.scripts.before, ['scripts']);
+  gulp.watch([
+    paths.scripts.after + '/global.js',
+    paths.styles.after + '/*.css',
+    paths.views.after + '/*.html'
+  ]).on('change', browserSync.reload);
 });
 
-gulp.task('build', ['styles', 'views', 'scripts', 'images'], ()=> {
+gulp.task('build', ['styles', 'views', 'files', 'scripts', 'images'], ()=> {
   gulp.src('build/**/*')
     .pipe(zip('deploy'+version_date+'.zip'))
     .pipe(gulp.dest('./'))
