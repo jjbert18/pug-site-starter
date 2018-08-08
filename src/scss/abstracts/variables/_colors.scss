@@ -7,41 +7,79 @@
 
 // === Globals === //
 $color-white: #ffffff;
-$color-black: #000000;
-$color-acadia: #333831;
-$color-kelp: #294629;
-$color-avocado: #487c48;
-$color-sprout: #80c784;
 $color-mercury: #e4e4e4;
-$color-off-white: #fcfff3;
+$color-black: #000000;
+$color-inchworm: #ade25d;
+$color-ming: #3b7080;
+$color-gray-asparagus: #3a5743;
 
 // === Content Specific === //
+
 // Copy text color
-$color-text: $color-acadia;
+$color-text: $color-black;
 
 // Main brand color
-$color-brand: $color-avocado;
+$color-brand: $color-inchworm;
 
 // Background color
-$color-background: $color-off-white;
+$color-background: $color-white;
 
-// Header background color
-$color-header-bg-full: rgba($color-kelp, 0.95);
-$color-header-bg-trans: rgba($color-kelp, 0.5);
+// = Header = //
+// background color
+$color-header-bg-full: rgba($color-ming, 0.95);
+$color-header-bg-trans: rgba($color-ming, 0.5);
 
-// Footer background color
-$color-footer-bg: $color-kelp;
+// nav links
+$color-header-nav-link: $color-white;
+
+// = Mobile menu toggle = //
+$color-mobile-bars: $color-white;
+
+// = Footer = //
+// background color
+$color-footer-bg: $color-ming;
+
+// text
+$color-footer-text: $color-white;
+
+// icons
+$color-footer-icons: $color-inchworm;
+$color-footer-icons-hover: $color-brand;
+
+// = Contact bar = //
+$color-contact-bar-title: $color-ming;
+
+// = Buttons = //
+// background color
+$color-btn-bg: $color-brand;
+$color-btn-text: $color-white;
+
+// = Pea Card = //
+// background colors
+$color-card-bg-1: $color-ming;
+$color-card-bg-2: $color-gray-asparagus;
+$color-card-bg-3: $color-inchworm;
+
+// text color
+$color-card-text: $color-white;
+
+// = Hero = //
+$color-hero-text: $color-white;
+
+// = Sidebar = //
+$color-sidebar-bg: $color-mercury;
+$color-sidebar-icons: $color-ming;
+$color-sidebar-icons-hover: $color-brand;
+
 
 // === Color Map === //
 // Colors that will be used as classes in the color classes function
 // functions/_color-classes.scss
 $color-map: (
   "white" $color-white,
-  "black" $color-black,
-  "acadia" $color-acadia,
-  "kelp" $color-kelp,
-  "avocado" $color-avocado,
-  "sprout" $color-sprout,
   "mercury" $color-mercury,
-  "off-white" $color-off-white,
+  "black" $color-black,
+  "inchworm" $color-inchworm,
+  "ming" $color-ming,
+  "gray-asparagus" $color-gray-asparagus,
 );

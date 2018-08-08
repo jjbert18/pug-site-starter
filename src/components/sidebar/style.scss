@@ -6,7 +6,7 @@
 // -----------------------------------------------------------------------------
 
 .sidebar {
-  background-color: $color-mercury;
+  background-color: $color-sidebar-bg;
   margin-bottom: $vertical-rhythm-sm;
   position: sticky;
   top: calc(#{$header-height} + #{$spacing-vertical-sm});
@@ -28,9 +28,10 @@
       a {
         align-items: center;
         display: flex;
+        color: $color-sidebar-icons;
 
         &:hover {
-          color: $color-sprout;
+          color: $color-sidebar-icons-hover;
           text-decoration: none;
         }
 

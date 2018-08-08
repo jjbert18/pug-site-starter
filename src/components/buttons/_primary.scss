@@ -3,14 +3,14 @@
 // -----------------------------------------------------------------------------
 
 .btn--primary {
-  background-color: $color-sprout;
-  color: $color-white;
+  background-color: $color-btn-bg;
+  color: $color-btn-text;
   transition: $transition-base;
   transform-origin: center;
 
   &:active,
   &:visited {
-    color: $color-white;
+    color: $color-btn-text;
   }
 
   &:hover {

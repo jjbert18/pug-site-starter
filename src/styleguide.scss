@@ -31,13 +31,17 @@
 }
 
 .sg-top-link {
-  background-color: $color-sprout;
+  background-color: $color-brand;
   bottom: 0;
-  color: $color-white;
+  color: $color-text;
   font-size: 1rem;
   padding: 1em;
   position: sticky;
   display: inline-block;
+
+  a:visited {
+    color: $color-text;
+  }
 }
 
 // === Code === //

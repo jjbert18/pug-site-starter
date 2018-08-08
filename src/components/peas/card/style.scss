@@ -9,7 +9,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  color: $color-white;
+  color: $color-card-text;
   flex: 1 1 auto;
   margin-bottom: 1rem;
   padding: 2.5rem;
@@ -27,15 +27,15 @@
   }
 
   &:nth-of-type(3n+1) {
-    background-color: $color-kelp;
+    background-color: $color-card-bg-1;
   }
 
   &:nth-of-type(3n+2) {
-    background-color: $color-sprout;
+    background-color: $color-card-bg-2;
   }
 
   &:nth-of-type(3n+3) {
-    background-color: $color-avocado;
+    background-color: $color-card-bg-3;
   }
 
   &:nth-of-type(4n) {
@@ -47,7 +47,7 @@
 
   &.pea-card--bg-img:before {
     @include trbl();
-    background-color: rgba($color-kelp, 0.75);
+    background-color: rgba($color-card-bg-3, 0.75);
     content: '';
     pointer-events: none;
   }
@@ -57,7 +57,7 @@
     z-index: 1;
 
     a {
-      color: $color-white;
+      color: $color-card-text;
       text-decoration: none;
 
       &:after {

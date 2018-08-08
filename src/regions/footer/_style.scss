@@ -33,7 +33,7 @@
   .footer__content {
     p {
       @include type-p-minus();
-      color: $color-off-white;
+      color: $color-footer-text;
       max-width: 65%;
       margin: 1rem auto 2rem;
       text-align: center;
@@ -70,12 +70,12 @@
       }
 
       i {
-        color: $color-avocado;
+        color: $color-footer-icons;
         font-size: 1.5rem;
         transition: $transition-base;
 
         &:hover {
-          color: $color-sprout;
+          color: $color-footer-icons-hover;
         }
       }
     }
@@ -83,7 +83,7 @@
 
   .footer__copyright {
     @include outer-spacing();
-    background-color: darken($color-kelp, 5%);
+    background-color: darken($color-footer-bg, 5%);
     display: block;
     width: 100%;
     position: absolute;
@@ -92,7 +92,7 @@
     top: 100%;
 
     p {
-      color: rgba($color-avocado, 0.5);
+      color: rgba($color-footer-text, 0.5);
       font-size:  0.75rem;
       text-align: left;
     }

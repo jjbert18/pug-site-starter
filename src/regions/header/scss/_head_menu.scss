@@ -3,7 +3,7 @@
 .header {
   .header__menu {
     @include bp-max($bp-mobile-menu - 1) {
-      background-color: darken($color-kelp, 3%);
+      background-color: $color-header-bg-full;
       left: 100%;
       position: absolute;
       right: 0;
@@ -58,7 +58,7 @@
 
     .header__menu-item-link {
       border-top: 0.15rem solid transparent;
-      color: $color-off-white;
+      color: $color-header-nav-link;
       font-size: 1rem;
       font-weight: $font-weight-extra-bold;
       letter-spacing: 0.05rem;
@@ -76,13 +76,13 @@
       }
 
       &:hover {
-        color: $color-sprout;
+        color: $color-brand;
       }
     }
   }
 
   .header__menu-item--highlight {
-    background-color: $color-sprout;
+    background-color: $color-brand;
     height: 100%;
     display: flex;
     align-items: center;
