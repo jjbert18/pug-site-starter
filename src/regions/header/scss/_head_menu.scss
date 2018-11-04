@@ -3,12 +3,12 @@
 .header {
   .header__menu {
     @include bp-max($bp-mobile-menu - 1) {
-      background-color: $color-header-bg-full;
+      background-color: $color-header-bg-drop;
       left: 100%;
       position: absolute;
       right: 0;
       top: 100%;
-      transition: all 300ms cubic-bezier(0.4, 0, 1, 1);
+      transition: all $transition-base-time cubic-bezier(0.4, 0, 1, 1);
       visibility: hidden;
       width: 100%;
       z-index: -1;
@@ -25,7 +25,7 @@
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 2rem 1rem 3rem;
+    padding: 2rem 0 0;
 
     @include bp-min($bp-mobile-menu) {
       align-items: center;
@@ -60,15 +60,15 @@
       border-top: 0.15rem solid transparent;
       color: $color-header-nav-link;
       font-size: 1rem;
-      font-weight: $font-weight-extra-bold;
+      font-weight: $fw-extra-bold;
       letter-spacing: 0.05rem;
       padding: 0.5rem 0;
       text-decoration: none;
       text-transform: uppercase;
 
-      @include bp-min($bp-md) {
+      @include bp-min($bp-mobile-menu) {
         font-size: 1.5vw;
-        text-shadow: 0 3px 5px rgba($color-black, 0.25);
+        text-shadow: 0 3px 5px rgba(setcolor(dark), 0.25);
       }
 
       @include bp-min($bp-mobile-menu) {
@@ -76,13 +76,13 @@
       }
 
       &:hover {
-        color: $color-brand;
+        color: $color-header-nav-hover;
       }
     }
   }
 
   .header__menu-item--highlight {
-    background-color: $color-brand;
+    background-color: setcolor(brand, light);
     height: 100%;
     display: flex;
     align-items: center;
@@ -91,7 +91,7 @@
     justify-content: center;
 
     .header__menu-item-link:hover {
-      color: $color-white;
+      color: setcolor(light);
       text-decoration: underline;
     }
   }

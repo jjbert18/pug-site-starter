@@ -17,8 +17,6 @@
   @include bp-min($bp-mobile-menu) {
     display: block;
     height: auto;
-    //padding-bottom: 1rem;
-    //padding-top: 1rem;
   }
 
   &:after {
@@ -35,8 +33,7 @@
   }
 
   .header__content {
-    @include outer-spacing();
-    //align-items: center;
+    @include gap-horizontal();
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -66,7 +63,6 @@
 
   .header__nav {
     display: flex;
-    //justify-content: flex-end;
     align-items: center;
   }
 

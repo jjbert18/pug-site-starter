@@ -1,83 +1,37 @@
-@charset 'UTF-8';
-
 // -----------------------------------------------------------------------------
-// Color variables
+// Abstracts/Variables: Colors
+// Global colors and color map
 // -----------------------------------------------------------------------------
 
 // === Globals === //
-$color-white: #ffffff;
-$color-mercury: #e4e4e4;
-$color-black: #000000;
-$color-inchworm: #ade25d;
-$color-ming: #3b7080;
-$color-gray-asparagus: #3a5743;
+//setcolor(light): #ffffff;
+//setcolor(dark): #000000;
+//setcolor(brand, dark): #333831;
+//setcolor(brand, medium): #294629;
+//setcolor(brand): #487c48;
+//setcolor(brand, light): #80c784;
+//setcolor(medium): #e4e4e4;
+//setcolor(medium, light): #fcfff3;
 
-// === Content Specific === //
+$theme-colors: (
+  light: (
+    base: #FFFFFF, // setcolor(light) = setcolor(light);
+  ),
+  medium: (
+    base: #e4e4e4, // setcolor(medium) = setcolor(medium);
+    light: #fcfff3 // setcolor(medium, light) = setcolor(medium, light);
+  ),
+  dark: (
+    base: #000000 // setcolor(dark) = setcolor(dark);
+  ),
+  brand: (
+    base: #487c48, // setcolor(brand) = setcolor(brand);
+    dark: #333831, // setcolor(brand, dark) = setcolor(brand, dark);
+    medium: #294629, // setcolor(brand, medium) = setcolor(brand, medium);
+    light: #80c784 // setcolor(brand, light)= setcolor(brand, light);
+  )
+) !default;
 
-// Copy text color
-$color-text: $color-black;
+$colors: $theme-colors;
 
-// Main brand color
-$color-brand: $color-inchworm;
-
-// Background color
-$color-background: $color-white;
-
-// = Header = //
-// background color
-$color-header-bg-full: rgba($color-ming, 0.95);
-$color-header-bg-trans: rgba($color-ming, 0.5);
-
-// nav links
-$color-header-nav-link: $color-white;
-
-// = Mobile menu toggle = //
-$color-mobile-bars: $color-white;
-
-// = Footer = //
-// background color
-$color-footer-bg: $color-ming;
-
-// text
-$color-footer-text: $color-white;
-
-// icons
-$color-footer-icons: $color-inchworm;
-$color-footer-icons-hover: $color-brand;
-
-// = Contact bar = //
-$color-contact-bar-title: $color-ming;
-
-// = Buttons = //
-// background color
-$color-btn-bg: $color-brand;
-$color-btn-text: $color-white;
-
-// = Pea Card = //
-// background colors
-$color-card-bg-1: $color-ming;
-$color-card-bg-2: $color-gray-asparagus;
-$color-card-bg-3: $color-inchworm;
-
-// text color
-$color-card-text: $color-white;
-
-// = Hero = //
-$color-hero-text: $color-white;
-
-// = Sidebar = //
-$color-sidebar-bg: $color-mercury;
-$color-sidebar-icons: $color-ming;
-$color-sidebar-icons-hover: $color-brand;
-
-// === Color Map === //
-// Colors that will be used as classes in the color classes function
-// functions/_color-classes.scss
-$color-map: (
-  "white" $color-white,
-  "mercury" $color-mercury,
-  "black" $color-black,
-  "inchworm" $color-inchworm,
-  "ming" $color-ming,
-  "gray-asparagus" $color-gray-asparagus,
-);
+// setcolor(medium, 20);

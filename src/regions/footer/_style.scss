@@ -1,6 +1,6 @@
 .footer {
-  @include outer-spacing();
-  @include vertical-rhythm($property: margin);
+  @include gap-horizontal();
+  @include gap-vertical($property: margin);
   align-items: center;
   background-color: $color-footer-bg;
   display: flex;
@@ -15,7 +15,7 @@
     align-items: center;
     padding-bottom: 1rem;
 
-    @include bp-min($bp-md) {
+    @include media('>=md') {
       padding-bottom: 0;
     }
 
@@ -24,7 +24,7 @@
       max-height: 50px;
       margin: 0 auto;
 
-      @include bp-min($bp-md) {
+      @include media('>=md') {
         margin: 0;
       }
     }
@@ -50,7 +50,7 @@
     flex-direction: column;
     margin-top: $vertical-rhythm-sm;
 
-    @include bp-min($bp-md) {
+    @include media('>=md') {
       flex-direction: row;
       padding-right: 0;
     }
@@ -82,7 +82,7 @@
   }
 
   .footer__copyright {
-    @include outer-spacing();
+    @include gap-horizontal();
     background-color: darken($color-footer-bg, 5%);
     display: block;
     width: 100%;
@@ -92,7 +92,7 @@
     top: 100%;
 
     p {
-      color: rgba($color-footer-text, 0.5);
+      color: $color-footer-copyright;
       font-size:  0.75rem;
       text-align: left;
     }

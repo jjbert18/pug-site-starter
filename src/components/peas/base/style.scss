@@ -10,12 +10,12 @@
   padding-right: 2.5rem;
   margin-bottom: 2.5rem;
 
-  @include bp-min($bp-md) {
+  @include media('>=md') {
     flex: 1 1 50%;
     max-width: 50%;
   }
 
-  @include bp-min($bp-lg) {
+  @include media('>=lg') {
     flex: 1 1 auto;
     margin-bottom: 0;
   }
@@ -26,7 +26,7 @@
 
   .pea__title {
     @include type-p-plus();
-    font-weight: $font-weight-bold;
+    font-weight: $fw-bold;
     margin: 0;
   }
 

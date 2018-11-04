@@ -1,0 +1,34 @@
+// -----------------------------------------------------------------------------
+// Abstracts/Utilities: Colors
+// Class generation for all colors in $colors map
+// -----------------------------------------------------------------------------
+
+// Generate color classes
+@each $color, $shades in $colors {
+  @each $shade, $hex in $shades {
+    @if $shade == 'base' {
+      .color-#{$color} {
+        color: $hex;
+      }
+    } @else {
+      .color-#{$color}-#{$shade} {
+        color: $hex;
+      }
+    }
+  }
+}
+
+// Generate background classes
+@each $color, $shades in $colors {
+  @each $shade, $hex in $shades {
+    @if $shade == 'base' {
+      .bg-#{$color} {
+        background-color: $hex;
+      }
+    } @else {
+      .bg-#{$color}-#{$shade} {
+        background-color: $hex;
+      }
+    }
+  }
+}

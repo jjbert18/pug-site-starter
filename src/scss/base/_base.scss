@@ -27,7 +27,7 @@ html {
 body {
   background-color: $color-background;
   font-family: $font-secondary;
-  font-weight: $font-weight-regular;
+  font-weight: $fw-regular;
   margin: 0;
   min-height: 100vh;
   display: flex;
@@ -40,9 +40,9 @@ body {
 }
 
 .container {
-  @include outer-spacing();
+  @include gap-horizontal();
 
-  @include bp-min($bp-xlg) {
+  @include bp-min($bp-xl) {
     max-width: $max-width;
     margin: 0 auto;
   }
@@ -60,14 +60,14 @@ main {
   margin-top: calc(#{-$header-height} + #{-$spacing-vertical-sm});
 
   .hero__text-title {
-    @include bp-min($bp-lg) {
+    @include media('>=lg') {
       padding-top: 6rem;
     }
   }
 }
 
 .hero:not(:first-of-type) {
-  @include vertical-rhythm($property: margin);
+  @include gap-vertical($property: margin);
 }
 
 .image {

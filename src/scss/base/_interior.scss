@@ -3,16 +3,17 @@
 // -----------------------------------------------------------------------------
 
 .interior {
-  @include outer-spacing($container: true);
+  @include container();
+  @include gap-horizontal();
 
-  @include bp-min($bp-md) {
+  @include media('>=md') {
     align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
   }
 
   .interior__header {
-    @include bp-min($bp-md) {
+    @include media('>=md') {
       flex: 1 1 100%;
     }
   }
@@ -20,7 +21,7 @@
   .interior__header-title {
     margin: $vertical-rhythm-xsm 0 0;
 
-    @include bp-min($bp-md) {
+    @include media('>=md') {
       margin-top: $vertical-rhythm-sm;
     }
   }
@@ -32,7 +33,7 @@
   .interior__content {
     margin-bottom: $vertical-rhythm-sm;
 
-    @include bp-min($bp-md) {
+    @include media('>=md') {
       flex-basis: 75%;
       max-width: 75%;
       padding-right: 10%;
@@ -41,11 +42,18 @@
     p {
       margin: 2rem 0;
 
-      .image {
-        float: left;
-        max-width: 45%;
-        padding: 1em 2em;
-        padding-left: 0;
+      span.image {
+        display: block;
+        margin: 2rem 0;
+
+        @include media('>=md') {
+          display: inline;
+          float: left;
+          margin: 0;
+          max-width: 45%;
+          padding: 1em 2em;
+          padding-left: 0;
+        }
       }
     }
 
@@ -62,7 +70,7 @@
         content: '\201C';
         font-family: $font-primary;
         font-size: 4rem;
-        font-weight: $font-weight-bold;
+        font-weight: $fw-bold;
         line-height: 1;
       }
     }

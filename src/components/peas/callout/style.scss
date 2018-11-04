@@ -10,7 +10,7 @@
   flex-direction: column-reverse;
   margin-top: 2.5rem;
 
-  @include bp-min($bp-md) {
+  @include media('>=md') {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -20,12 +20,12 @@
   }
 
   &:nth-of-type(even) {
-    @include bp-min($bp-md) {
+    @include media('>=md') {
       flex-direction: row-reverse;
     }
 
     .pea-callout__image {
-      @include bp-min($bp-md) {
+      @include media('>=md') {
         background-position: right center;
       }
     }
@@ -33,7 +33,7 @@
 
   .pea-callout__content,
   .pea-callout__image {
-    @include bp-min($bp-md) {
+    @include media('>=md') {
       flex: 1 1 50%;
       max-width: 50%;
     }
@@ -42,7 +42,7 @@
   .pea-callout__content {
     padding: 1.5rem 0;
 
-    @include bp-min($bp-md) {
+    @include media('>=md') {
       padding: 1.5rem;
     }
 

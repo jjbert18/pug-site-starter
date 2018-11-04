@@ -15,13 +15,13 @@
   padding: 2.5rem;
   position: relative;
 
-  @include bp-min($bp-md) {
+  @include media('>=md') {
     flex-basis: 50%;
     margin-bottom: 0;
     max-width: 50%;
   }
 
-  @include bp-min($bp-lg) {
+  @include media('>=lg') {
     flex-basis: 33.333%;
     max-width: 33.333%;
   }
@@ -39,7 +39,7 @@
   }
 
   &:nth-of-type(4n) {
-    @include bp-min($bp-lg) {
+    @include media('>=lg') {
       flex-basis: 66.666%;
       max-width: 66.666%;
     }
@@ -47,7 +47,7 @@
 
   &.pea-card--bg-img:before {
     @include trbl();
-    background-color: rgba($color-card-bg-3, 0.75);
+    background-color: $color-card-bg-overlay;
     content: '';
     pointer-events: none;
   }

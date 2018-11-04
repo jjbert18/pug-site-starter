@@ -11,7 +11,7 @@
   }
 
   .hero__content {
-    @include bp-min($bp-md) {
+    @include media('>=md') {
       padding-left: calc(10vw + 1rem);
     }
   }
@@ -20,17 +20,17 @@
     align-items: flex-start;
   }
 
-  //@include bp-max($bp-md) {
-  //  background: linear-gradient(to right, $bg-hero-grad);
-  //  background-position: right;
-  //}
+  @include media('<md') {
+    background: linear-gradient(to right, $bg-hero-grad);
+    background-position: right;
+  }
 
-  //.hero__content {
-  //  display: flex;
-  //  flex-direction: row;
-  //
-  //  @include bp-max($bp-md) {
-  //    display: block;
-  //  }
-  //}
+  .hero__content {
+    display: flex;
+    flex-direction: row;
+
+    @include media('<md') {
+      display: block;
+    }
+  }
 }

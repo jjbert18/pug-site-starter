@@ -3,9 +3,9 @@
 // -----------------------------------------------------------------------------
 
 .btn--secondary {
-  border: 2px solid $color-btn-bg;
+  border: 2px solid $color-btn-secondary-border;
   background-color: transparent;
-  color: $color-btn-bg;
+  color: $color-btn-secondary-text;
   text-align: center;
 
   &:hover,

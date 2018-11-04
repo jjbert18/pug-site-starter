@@ -6,12 +6,13 @@
 // -----------------------------------------------------------------------------
 
 .contact-bar {
-  background-color: $color-mercury;
+  background-color: $color-contact-bar-bg;
   padding-top: $vertical-rhythm-sm;
   padding-bottom: $vertical-rhythm-sm;
 
   .contact-bar__content {
-    @include outer-spacing($container: true);
+    @include container();
+    @include gap-horizontal();
     align-items: center;
     display: flex;
   }

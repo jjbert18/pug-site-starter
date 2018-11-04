@@ -2,47 +2,76 @@
 // Theme: Content specific color variables
 // -----------------------------------------------------------------------------
 
+@import '../functions/set-color';
+
 // === Base === //
-// Copy text color
-$color-text: $color-black;
+// Copy text
+$color-text: setcolor(brand, dark);
 
-// Main brand color
-$color-brand: $color-inchworm;
+// Main brand
+$color-brand: setcolor(brand, light);
 
-// Background color
-$color-background: $color-white;
+// Background
+$color-background: setcolor(medium, light);
+
+// Links
+$color-link-text: setcolor(brand);
+$color-link-text-hover: $color-brand;
+
+// === Buttons === //
+$color-btn-bg: setcolor(brand);
+$color-btn-text: setcolor(light);
 
 // === Header === //
-$color-header-bg-full: rgba($color-ming, 0.95);
-$color-header-bg-trans: rgba($color-ming, 0.5);
-$color-header-nav-link: $color-white;
+$color-header-bg-full: rgba(setcolor(brand, medium), 0.95);
+$color-header-bg-trans: rgba(setcolor(brand, medium), 0.5);
+$color-header-bg-drop: darken(setcolor(brand, medium), 3%);
+$color-header-nav-link: setcolor(medium, light);
+$color-header-nav-hover: $color-brand;
 
-// === Mobile menu toggle ===  //
-$color-mobile-bars: $color-white;
+// === Mobile menu toggle === //
+$color-mobile-bars: setcolor(medium, light);
 
 // === Footer === //
-$color-footer-bg: $color-ming;
-$color-footer-text: $color-white;
-$color-footer-icons: $color-inchworm;
+$color-footer-bg: setcolor(brand, medium);
+$color-footer-text: setcolor(medium, light);
+$color-footer-copyright: rgba(setcolor(brand), 0.5);
+$color-footer-icons: setcolor(brand);
 $color-footer-icons-hover: $color-brand;
 
 // === Contact bar === //
-$color-contact-bar-title: $color-ming;
+$color-contact-bar-bg: setcolor(medium);
+$color-contact-bar-title: setcolor(brand);
 
-// === Buttons === //
-$color-btn-bg: $color-brand;
-$color-btn-text: $color-white;
+// === Primary button === //
+$color-btn-primary-bg: $color-brand;
+$color-btn-primary-text: setcolor(medium, light);
+
+// === Secondary button === //
+$color-btn-secondary-bg: setcolor(brand, light);
+$color-btn-secondary-border: setcolor(brand);
+$color-btn-secondary-text: setcolor(brand, light);
+$color-btn-secondary-text-hover: setcolor(medium, light);
 
 // === Pea Card === //
-$color-card-bg-1: $color-ming;
-$color-card-bg-2: $color-gray-asparagus;
-$color-card-bg-3: $color-inchworm;
-$color-card-text: $color-white;
+$color-card-bg-1: setcolor(brand, medium);
+$color-card-bg-2: setcolor(brand, light);
+$color-card-bg-3: setcolor(brand);
+$color-card-bg-overlay: setcolor(brand, medium);
+$color-card-bg-img-overlay: rgba($color-card-bg-overlay, 0.75);
+$color-card-text: setcolor(medium, light);
 
-// === Hero  === //
-$color-hero-text: $color-white;
+// === Pod === //
+$color-pod-side-text: setcolor(brand, medium);
+
+// === Hero === //
+$color-hero-text: setcolor(light);
 
 // === Sidebar === //
-$color-sidebar-bg: $color-mercury;
-$color-sidebar-icons: $color-ming;
+$color-sidebar-bg: setcolor(medium);
+$color-sidebar-icons: setcolor(brand);
 $color-sidebar-icons-hover: $color-brand;
+
+// === Testimonial === //
+$color-testimonial-bg: setcolor(medium);;
+$color-testimonial-title: rgba(setcolor(brand), 1);;

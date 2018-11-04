@@ -5,7 +5,7 @@
 // Component: Hero
 // -----------------------------------------------------------------------------
 
-$bg-hero-grad: rgba($color-black, 0.75) 0%, rgba($color-brand, 0.35) 75%;
+$bg-hero-grad: rgba(setcolor(dark), 0.75) 0%, rgba(setcolor(brand), 0.35) 75%;
 
 @import
 "base",

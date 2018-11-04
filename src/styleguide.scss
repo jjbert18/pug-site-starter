@@ -7,12 +7,12 @@
 
 // === Section === //
 .styleguide {
-  @include outer-spacing();
-  @include vertical-rhythm();
+  @include gap-horizontal();
+  @include gap-vertical();
 }
 
 .sg-title {
-  background-color: $color-mercury;
+  background-color: setcolor(medium);
   margin-bottom: 2rem;
   padding: 1rem;
 
@@ -31,22 +31,18 @@
 }
 
 .sg-top-link {
-  background-color: $color-brand;
+  background-color: setcolor(brand, light);
   bottom: 0;
-  color: $color-text;
+  color: setcolor(light);
   font-size: 1rem;
   padding: 1em;
   position: sticky;
   display: inline-block;
-
-  a:visited {
-    color: $color-text;
-  }
 }
 
 // === Code === //
 code {
-  background-color: rgba($color-mercury, 0.75);
+  background-color: rgba(setcolor(medium), 0.75);
   display: block;
   padding: 0.5rem 2rem;
   margin: 0 0 3rem;
@@ -62,11 +58,11 @@ code {
   margin: 1.5rem 0 0;
   padding: 0;
 
-  @include bp-min($bp-md) {
+  @include media('>=md') {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @include bp-min($bp-lg) {
+  @include media('>=lg') {
     grid-template-columns: repeat(6, 1fr);
   }
 
@@ -76,7 +72,7 @@ code {
   }
 
   .colors__color-box {
-    box-shadow: 0 0.125rem 0.125rem 0.0625rem rgba($color-black, 0.25);
+    box-shadow: 0 0.125rem 0.125rem 0.0625rem rgba(setcolor(dark), 0.25);
     flex: 1 1 3rem;
     margin-bottom: 0.5rem;
   }

@@ -4,7 +4,6 @@
 
 .hero {
   align-items: center;
-  background-color: $color-ming;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,12 +22,12 @@
 }
 
 .hero__content {
-  @include outer-spacing();
+  @include gap-horizontal();
   position: relative;
   text-align: center;
   z-index: 1;
 
-  @include bp-min($bp-md) {
+  @include media('>=md') {
     padding: 0;
     max-width: 80vw;
     text-align: left;
@@ -52,7 +51,7 @@
   .hero__text-description {
     margin-bottom: 1.5rem;
 
-    @include bp-min($bp-md) {
+    @include media('>=md') {
       max-width: 50%;
     }
   }
@@ -60,7 +59,7 @@
   .btn {
     margin: 0 auto;
 
-    @include bp-min($bp-md) {
+    @include media('>=md') {
       margin: 0;
     }
   }

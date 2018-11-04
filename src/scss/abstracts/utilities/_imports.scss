@@ -1,8 +1,7 @@
 // -----------------------------------------------------------------------------
-// Fonts
-// This file contains all application-wide fonts
+// Abstracts: Utilities
+// An import of all things Sass utilities
+// Utilities usually generate classes from maps
 // -----------------------------------------------------------------------------
 
-@import
-'primary',
-'secondary';
+@import 'colors';

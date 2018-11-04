@@ -12,7 +12,7 @@
   top: calc(#{$header-height} + #{$spacing-vertical-sm});
   width: 100%;
 
-  @include bp-min($bp-md) {
+  @include media('>=md') {
     flex-basis: 25%;
     max-width: 25%;
   }

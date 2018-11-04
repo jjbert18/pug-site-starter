@@ -1,8 +1,10 @@
 // -----------------------------------------------------------------------------
-// This file contains all application-wide Sass functions.
+// Abstracts: Functions
+// This file contains all application-wide Sass functions
 // -----------------------------------------------------------------------------
 
 @import
-  "asset-pathing",
-  "color-classes",
-  "unit-conversions";
+'asset-pathing',
+'get-em',
+'get-rem',
+'set-color';

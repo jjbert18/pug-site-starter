@@ -1,10 +1,9 @@
-@charset 'UTF-8';
-
 // -----------------------------------------------------------------------------
-// Fluid type mixin
+// Mixin: Fluid Type
+// Fixed font size below min and above max breakpoints with flex unit in between
 // Used in typography mixins
 //
-// Options:
+// Option(s):
 // • $properties(value = css property) - property to apply value to
 // • $min-vw(value = width) - min screen width to stop fluid calc
 // • $max-vw(value = width) - max screen width to stop fluid calc

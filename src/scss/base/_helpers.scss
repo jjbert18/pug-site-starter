@@ -37,5 +37,5 @@
 
 // space buffer for pages without hero
 .spacer {
-  @include outer-spacing(padding, vertical);
+  @include gap-horizontal(padding);
 }

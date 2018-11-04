@@ -1,8 +1,6 @@
 // -----------------------------------------------------------------------------
-// Fonts
-// This file contains all application-wide fonts
+// Vendor
+// An import of all things vendor that need compiling
 // -----------------------------------------------------------------------------
 
-@import
-'primary',
-'secondary';
+@import 'include-media';

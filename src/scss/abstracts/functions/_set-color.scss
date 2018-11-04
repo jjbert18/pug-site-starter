@@ -1,0 +1,23 @@
+// sass-lint:disable quotes
+
+// -----------------------------------------------------------------------------
+// Abstracts/Function: Set Color
+// Returns a color with an optional tone from the map
+//
+// Options:
+// • $color-name(value = text) - The base name of the color
+// • $tone(value = text, default = base) - The tone of that color or 'base'
+//
+// Usage:
+// • default = background-color: setcolor(medium);
+// • with tone = background-color: setcolor(gray, 60);
+// -----------------------------------------------------------------------------
+
+@function setcolor($color-name, $tone: base) {
+  @if map-has-key($colors, $color-name) {
+    $map-color-name: map-get($colors, $color-name);
+    @return map-get($map-color-name, $tone);
+  } @else {
+    @warn "Couldn't find a color named `#{$color-name}`.";
+  }
+}

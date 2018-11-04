@@ -1,28 +1,32 @@
-@charset 'UTF-8';
-
 // -----------------------------------------------------------------------------
-// Vertical rhythm
-//
-// @include vertical-rhythm();
-// Place on parent container
+// Abstracts/Mixin: Gap vertical
+// Apply to container where spacing is needed on the TOP and BOTTOM
+// @include gap-vertical();
 //
 // Options:
 // • $property(value = margin or padding) - default = padding - changes property
+// • $breakpoint(value = breakpoint variable) - default = md - breakpoint trigger
+// • $gap-small(value = gap vertical variable) - default = $gap-vertical-sm - the small/mobile size
+// • $gap-large(value = gap vertical variable) - default = $gap-vertical-md - the large/desktop size
 // • $reset(value = true or false) - default = false - reset the property back to initial
 // • $negative(value = true or false) - default = false - pulls content up the rhythm amount
-//
 // -----------------------------------------------------------------------------
 
-@mixin vertical-rhythm(
+@import '../../vendor/include-media';
+
+@mixin gap-vertical(
   $property: padding,
+  $breakpoint: md,
+  $gap-small: $gap-vertical-sm,
+  $gap-large: $gap-vertical-md,
   $reset: false,
   $negative: false) {
 
   // base
-  #{$property}-top: $vertical-rhythm-sm;
+  #{$property}-top: $gap-small;
 
-  @include bp-min($bp-md) {
-    #{$property}-top: $vertical-rhythm-md;
+  @include media('>#{$breakpoint}') {
+    #{$property}-top: $gap-large;
   }
 
   // reset
@@ -30,7 +34,7 @@
     #{$property}-top: inherit;
     #{$property}-top: initial;
 
-    @include bp-min($bp-md) {
+    @include media('>#{$breakpoint}') {
       #{$property}-top: inherit;
       #{$property}-top: initial;
     }
@@ -38,12 +42,12 @@
 
   // negative
   @if $negative == true {
-    margin-top: -$vertical-rhythm-md;
+    margin-top: -$gap-small;
     #{$property}-top: inherit;
     #{$property}-top: initial;
 
-    @include bp-min($bp-md) {
-      margin-top: -$vertical-rhythm-lg;
+    @include media('>#{$breakpoint}') {
+      margin-top: -$gap-large;
       #{$property}-top: inherit;
       #{$property}-top: initial;
     }

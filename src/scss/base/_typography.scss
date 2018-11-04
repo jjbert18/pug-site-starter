@@ -44,5 +44,14 @@ p.type-p-minus {
 
 a,
 a:visited {
-  color: $color-brand;
+  color: $color-link-text;
+}
+
+a {
+  font-weight: $fw-bold;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $color-link-text-hover;
 }

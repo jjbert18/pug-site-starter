@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// Abstracts/Variables: Layout
+// Horizontal and Vertical gaps and container widths
+// -----------------------------------------------------------------------------
+
+/**
+ * Vertical Gap
+ */
+$gap-vertical-xsm: 0 !default;
+$gap-vertical-sm: 1.5rem !default;
+$gap-vertical-md: 3rem !default;
+$gap-vertical-lg: 5rem !default;
+
+/**
+ * Horizontal Gap
+ */
+$gap-horizontal-sm: 1rem !default;
+$gap-horizontal-md: 1.5rem !default;
+$gap-horizontal-lg: 5vw !default;
+$gap-horizontal-xl: calc(50vw - (#{$bp-xl} / 2 )) !default;
+$gap-horizontal-max: 80vw !default;
+
+/**
+ * Container widths
+ */
+$container-lg: 80vw;

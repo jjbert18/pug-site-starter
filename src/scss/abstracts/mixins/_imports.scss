@@ -1,11 +1,15 @@
 // -----------------------------------------------------------------------------
-// This file contains all application-wide Sass mixins.
+// Mixins
+// This file contains all application-wide Sass mixins
 // -----------------------------------------------------------------------------
 
 @import
-  "breakpoints",
-  "fluid-type",
-  "outer-spacing",
-  "positioning",
-  "typography",
-  "vertical-rhythm";
+'breakpoints',
+'container',
+'fluid-type',
+'on-event',
+'button-reset',
+'gap-horizontal',
+'gap-vertical',
+'positionings',
+'typography';

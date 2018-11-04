@@ -6,12 +6,12 @@
 // -----------------------------------------------------------------------------
 
 .testimonial {
-  background-color: $color-mercury;
+  background-color: $color-testimonial-bg;
   margin-top: $vertical-rhythm-xsm;
   padding: 2rem;
 
   .testimonial__title {
-    color: $color-gray-asparagus;
+    color: $color-testimonial-title;
   }
 
   .testimonial__speaker {
